@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from '../views/Home/Home';
 import NavBar from '../components/NavBar/NavBar';
+import Detail from '../components/Detail/Detail';
 
 const RouterProvider = () => {
 	return (
@@ -8,6 +9,7 @@ const RouterProvider = () => {
 			<Routes>
 				<Route element={<NavBar />}>
 					<Route path={'/'} element={<Home />} />
+					<Route path={'/detail'} element={<Detail />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
