@@ -4,7 +4,7 @@ import Info from './Info';
 
 const Detail = () => {
 	return (
-		<section>
+		<section className='w-[375px] m-auto lg:w-[1115px]'>
 			<Gallery />
 			<Info />
 			<ModalCart />

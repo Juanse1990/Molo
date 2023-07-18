@@ -6,7 +6,7 @@ import avatar from '../../assets/images/avatar.png';
 const Menu = () => {
 	return (
 		<>
-			<nav>
+			<nav className='hidden'>
 				<ul>
 					<li>
 						<Link>Hombre</Link>
@@ -22,7 +22,7 @@ const Menu = () => {
 					</li>
 				</ul>
 			</nav>
-			<div>
+			<div className='hidden'>
 				<nav>
 					<img src={x} alt='x icon' className='white' />
 					<ul>
@@ -41,12 +41,18 @@ const Menu = () => {
 					</ul>
 				</nav>
 			</div>
-			<div>
-				<div>
-					<div>3</div>
-					<img src={cart} alt='carrito' />
+			<div className='flex items-center justify-between w-[70px] lg:w-[125px]'>
+				<div className='relative cursor-pointer'>
+					<div className='w-[15px] h-[12px] bg-orange-400 rounded-[16px] absolute mt-[-2px] ml-[-3px] text-[0.6em] text-center text-blanco hidden'>
+						3
+					</div>
+					<img src={cart} alt='carrito' className='lg:w-[48px]' />
 				</div>
-				<img src={avatar} alt='avatar' className='w-12 h-auto' />
+				<img
+					src={avatar}
+					alt='avatar'
+					className='w-[30px] lg:w-[48px] hover:cursor-pointer hover:border-[2px] hover:border-azul hover:rounded-[50%]'
+				/>
 			</div>
 		</>
 	);
