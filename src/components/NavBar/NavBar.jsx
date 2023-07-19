@@ -1,9 +1,19 @@
 import { Link, Outlet } from 'react-router-dom';
+import { useState } from 'react';
 import Menu from './Menu';
 import menu from '../../assets/images/menu.svg';
 import ModalMenu from './ModalMenu';
 
 const NavBar = () => {
+	const [modalMenu, setModalMenu] = useState(false);
+
+	const open = () => {
+		setModalMenu(true);
+	};
+	const close = () => {
+		setModalMenu(false);
+	};
+
 	return (
 		<>
 			<div className=' m-auto w-[375px] lg:w-[1115px]'>
@@ -13,14 +23,15 @@ const NavBar = () => {
 							src={menu}
 							alt='menu icon'
 							className='white cursor-pointer lg:hidden'
+							onClick={open}
 						/>
-						<Link to={'/'} className='text-[45px] lg:text-[60px]'>
+						<Link to={'/detail'} className='text-[45px] lg:text-[60px]'>
 							MOLO
 						</Link>
 					</div>
 					<Menu />
 				</header>
-				<ModalMenu />
+				{modalMenu && <ModalMenu close={close} />}
 				<Outlet />
 			</div>
 		</>
