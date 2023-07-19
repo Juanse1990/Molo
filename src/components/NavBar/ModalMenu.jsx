@@ -7,12 +7,15 @@ const ModalMenu = ({ close }) => {
 		<div className='fixed -top-0 m-[0] flex h-screen w-[375px] bg-negro  bg-opacity-70 lg:hidden'>
 			<nav className='p m-0 w-[250px] bg-blanco px-[28px] py-[24px] text-[1.1em] font-bold'>
 				<img src={x} alt='x icon' className='cursor-pointer' onClick={close} />
-				<ul className='mt-[50px] flex h-[200px] flex-col justify-between'>
+				<ul className='mt-[50px] flex h-[250px] flex-col justify-between'>
 					<li>
 						<Link>Hombre</Link>
 					</li>
 					<li>
 						<Link>Mujer</Link>
+					</li>
+					<li>
+						<Link>Unisex</Link>
 					</li>
 					<li>
 						<Link>Nosotros</Link>
