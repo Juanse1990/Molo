@@ -6,9 +6,17 @@ import ModalGallery from './ModalGallery';
 const Gallery = () => {
 	return (
 		<article>
-			<div>
-				<img src={previous} alt='previous' />
-				<img src={next} alt='next' />
+			<div className='relative h-[300px] w-full bg-gallery-image bg-cover bg-center lg:hover:cursor-pointer'>
+				<img
+					src={previous}
+					alt='previous'
+					className='absolute left-[0px] top-[140px] h-[40px] w-[40px] cursor-pointer rounded-[50%] bg-blanco'
+				/>
+				<img
+					src={next}
+					alt='next'
+					className='absolute right-[0px] top-[140px] h-[40px] w-[40px] cursor-pointer rounded-[50%] bg-blanco'
+				/>
 			</div>
 			<div>
 				<img id='1' src={image} alt='imagen' />

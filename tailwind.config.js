@@ -9,6 +9,9 @@ export default {
       blanco: '#F2F2F2',
       azul: '#4E86C1',
     },
+    backgroundImage: {
+      'gallery-image': "url('../../src/assets/images/image1.jpg')",
+    },
   },screens: {
     '2xl': { max: '1535px' },
     // => @media (max-width: 1535px) { ... }
