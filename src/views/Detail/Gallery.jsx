@@ -10,15 +10,15 @@ const Gallery = () => {
 				<img
 					src={previous}
 					alt='previous'
-					className='absolute left-[0px] top-[140px] h-[40px] w-[40px] cursor-pointer rounded-[50%] bg-blanco'
+					className='absolute left-[10px] top-[140px] h-[40px] w-[40px] cursor-pointer rounded-[50%] bg-blanco'
 				/>
 				<img
 					src={next}
 					alt='next'
-					className='absolute right-[0px] top-[140px] h-[40px] w-[40px] cursor-pointer rounded-[50%] bg-blanco'
+					className='absolute right-[10px] top-[140px] h-[40px] w-[40px] cursor-pointer rounded-[50%] bg-blanco'
 				/>
 			</div>
-			<div>
+			<div className='hidden lg:block'>
 				<img id='1' src={image} alt='imagen' />
 				<img id='2' src={image} alt='imagen' />
 				<img id='3' src={image} alt='imagen' />
