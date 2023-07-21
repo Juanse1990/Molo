@@ -35,7 +35,7 @@ const ModalMenu = ({ modalMenuOC }) => {
 };
 
 ModalMenu.propTypes = {
-	close: PropTypes.func.isRequired,
+	modalMenuOC: PropTypes.func.isRequired,
 };
 
 export default ModalMenu;
