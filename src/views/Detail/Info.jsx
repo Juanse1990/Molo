@@ -18,7 +18,9 @@ const Info = () => {
 			<div className='mb-[24px] flex items-center justify-between'>
 				<p className='flex items-center gap-[18px] text-[1.8em] font-bold'>
 					$125.00{' '}
-					<span className=' p-[4px] text-[0.5em] text-red-500'>50%</span>
+					<span className='bg-red-500 bg-opacity-[0.1] p-[4px] text-[0.5em] text-red-500'>
+						50%
+					</span>
 				</p>
 				<p className='text-bold text-azul line-through'>$250.00</p>
 			</div>
