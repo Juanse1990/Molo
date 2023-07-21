@@ -4,7 +4,7 @@ import image from '../../assets/images/image1.jpg';
 
 const ModalGallery = () => {
 	return (
-		<div>
+		<div className='hidden'>
 			<article>
 				<p>X</p>
 				<div>
