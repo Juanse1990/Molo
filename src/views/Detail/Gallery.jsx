@@ -17,7 +17,7 @@ const Gallery = () => {
 					className='absolute right-[10px] top-[140px] h-[40px] w-[40px] cursor-pointer rounded-[50%] bg-blanco lg:hidden'
 				/>
 			</div>
-			<div className='hidde lg:flex lg:justify-between lg:hover:cursor-pointer'>
+			<div className='hidden lg:flex lg:justify-between lg:hover:cursor-pointer'>
 				<img
 					id='1'
 					src={image}
