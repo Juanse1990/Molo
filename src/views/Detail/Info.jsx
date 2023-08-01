@@ -1,6 +1,13 @@
+import { useState } from 'react';
 import cart from '../../assets/images/cart-white.svg';
 
 const Info = () => {
+	const [selectedSize, setSelectedSize] = useState(null);
+
+	const handleSizeClick = (size) => {
+		setSelectedSize(size);
+	};
+
 	return (
 		<article className='p-[24px] lg:w-[446px]'>
 			<h2 className='mb-[12px] text-[0.8em] uppercase tracking-[1px] text-azul'>
@@ -23,6 +30,66 @@ const Info = () => {
 					</span>
 				</p>
 				<p className='text-bold text-azul line-through'>$250.00</p>
+			</div>
+			<div>
+				<ul className='mb-[24px] flex h-[40px] cursor-pointer items-center justify-between'>
+					<li
+						className={`h-[25px] w-[15px] rounded-[8px] px-[1px] hover:bg-azul ${
+							selectedSize === 'U' ? 'bg-azul' : 'hover:bg-azul'
+						} `}
+						onClick={() => handleSizeClick('U')}
+					>
+						U
+					</li>
+					<li
+						className={`h-[25px] w-[22px] rounded-[8px] px-[1px] hover:bg-azul focus:bg-azul ${
+							selectedSize === 'XS' ? 'bg-azul' : 'hover:bg-azul'
+						}`}
+						onClick={() => handleSizeClick('XS')}
+					>
+						XS
+					</li>
+					<li
+						className={`h-[25px] w-[15px] rounded-[8px] px-[2px] hover:bg-azul ${
+							selectedSize === 'S' ? 'bg-azul' : 'hover:bg-azul'
+						}`}
+						onClick={() => handleSizeClick('S')}
+					>
+						S
+					</li>
+					<li
+						className={`h-[25px] w-[15px] rounded-[8px] hover:bg-azul ${
+							selectedSize === 'M' ? 'bg-azul' : 'hover:bg-azul'
+						}`}
+						onClick={() => handleSizeClick('M')}
+					>
+						M
+					</li>
+					<li
+						className={`h-[25px] w-[15px] rounded-[8px] px-[3px] hover:bg-azul ${
+							selectedSize === 'L' ? 'bg-azul' : 'hover:bg-azul'
+						}`}
+						onClick={() => handleSizeClick('L')}
+					>
+						L
+					</li>
+					<li
+						className={`h-[25px] w-[22px] rounded-[8px] px-[1px] hover:bg-azul ${
+							selectedSize === 'XL' ? 'bg-azul' : 'hover:bg-azul'
+						}`}
+						onClick={() => handleSizeClick('XL')}
+					>
+						XL
+					</li>
+					<li
+						className={`h-[25px] w-[30px] rounded-[8px] hover:bg-azul ${
+							selectedSize === 'XXL' ? 'bg-azul' : 'hover:bg-azul'
+						}`}
+						onClick={() => handleSizeClick('XXL')}
+					>
+						XXL
+					</li>
+				</ul>
 			</div>
 			<div className='lg:flex lg:h-[47px] lg:items-center lg:gap-[32px]'>
 				<div className='mb-[24px] flex h-[40px] items-center text-center lg:mb-[0]'>
