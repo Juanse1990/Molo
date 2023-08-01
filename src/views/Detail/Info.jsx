@@ -34,14 +34,6 @@ const Info = () => {
 			<div>
 				<ul className='mb-[24px] flex h-[40px] cursor-pointer items-center justify-between'>
 					<li
-						className={`h-[25px] w-[15px] rounded-[8px] px-[1px] hover:bg-azul ${
-							selectedSize === 'U' ? 'bg-azul' : 'hover:bg-azul'
-						} `}
-						onClick={() => handleSizeClick('U')}
-					>
-						U
-					</li>
-					<li
 						className={`h-[25px] w-[22px] rounded-[8px] px-[1px] hover:bg-azul focus:bg-azul ${
 							selectedSize === 'XS' ? 'bg-azul' : 'hover:bg-azul'
 						}`}
@@ -105,7 +97,7 @@ const Info = () => {
 						+
 					</p>
 				</div>
-				<button className='text-bold flex h-[57px] w-full items-center justify-center gap-[16px] rounded-[8px] bg-azul text-[0.9em] text-blanco hover:opacity-[0.5]'>
+				<button className='text-bold mb-[30px] flex h-[57px] w-full items-center justify-center gap-[16px] rounded-[8px] bg-azul text-[0.9em] text-blanco hover:opacity-[0.5] lg:mb-[0px]'>
 					<img src={cart} alt='carrito' />
 					Añadir al carrito
 				</button>

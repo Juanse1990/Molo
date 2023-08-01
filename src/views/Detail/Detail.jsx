@@ -4,7 +4,7 @@ import Info from './Info';
 import ModalGallery from './ModalGallery';
 
 const Detail = () => {
-	const [modalGallery, setModalGallery] = useState(true);
+	const [modalGallery, setModalGallery] = useState(false);
 
 	const modalGalleryOC = () => {
 		setModalGallery(!modalGallery);
