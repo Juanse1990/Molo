@@ -10,7 +10,7 @@ export default {
       azul: '#4E86C1',
     },
     backgroundImage: {
-      'gallery-image': "url('../../src/assets/images/image1.jpg')",
+      'gallery-image': "url('../../src/assets/images/1.jpg')",
     },
   },screens: {
     '2xl': { max: '1535px' },

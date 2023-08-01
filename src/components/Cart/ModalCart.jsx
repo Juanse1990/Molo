@@ -1,4 +1,4 @@
-import image from '../../assets/images/image1.jpg';
+import image1 from '../../assets/images/1.jpg';
 import trash from '../../assets/images/delete.svg';
 
 const ModalCart = () => {
@@ -8,7 +8,7 @@ const ModalCart = () => {
 			<div className='p-[24px]'>
 				<div className='mb-[24px] flex items-center justify-between'>
 					<img
-						src={image}
+						src={image1}
 						alt='image'
 						className='h-[50px] w-[50px] rounded-[4px]'
 					/>
