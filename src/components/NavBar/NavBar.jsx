@@ -6,18 +6,21 @@ import ModalMenu from './ModalMenu';
 import cart from '../../assets/images/cart.svg';
 import avatar from '../../assets/images/avatar.png';
 import ModalCart from '../Cart/ModalCart';
+import ModalGallery from '../../views/Detail/ModalGallery';
 
 const NavBar = () => {
 	const [modalMenu, setModalMenu] = useState(false);
 	const [modalCart, setModalCart] = useState(false);
+	const [modalGallery, setModalGallery] = useState(false);
 
 	const modalMenuOC = () => {
-		if (modalMenu) setModalMenu(false);
-		else setModalMenu(true);
+		setModalMenu(!modalMenu);
 	};
 	const modalCartOC = () => {
-		if (modalCart) setModalCart(false);
-		else setModalCart(true);
+		setModalCart(!modalCart);
+	};
+	const modalGalleryOC = () => {
+		setModalGallery(!modalGallery);
 	};
 
 	return (
@@ -57,6 +60,7 @@ const NavBar = () => {
 				</header>
 				{modalMenu && <ModalMenu modalMenuOC={modalMenuOC} />}
 				{modalCart && <ModalCart />}
+				{modalGallery && <ModalGallery modalGalleryOC={modalGalleryOC} />}
 				<Outlet />
 			</div>
 		</>

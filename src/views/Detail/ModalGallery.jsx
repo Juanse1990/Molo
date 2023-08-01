@@ -7,7 +7,7 @@ import image4 from '../../assets/images/4.jpg';
 
 const ModalGallery = () => {
 	return (
-		<div className='hidden'>
+		<div className='fixed -top-0 z-50 m-[0] h-screen w-[375px] bg-negro bg-opacity-70 lg:-left-0 lg:w-full'>
 			<article>
 				<p>X</p>
 				<div>

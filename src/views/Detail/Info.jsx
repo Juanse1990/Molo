@@ -9,11 +9,11 @@ const Info = () => {
 	};
 
 	return (
-		<article className='p-[24px] lg:w-[446px]'>
+		<article className='px-[24px] lg:w-[446px]'>
 			<h2 className='mb-[12px] text-[0.8em] uppercase tracking-[1px] text-azul'>
 				Molo
 			</h2>
-			<h2 className='mb-[16px] text-[1.7em] font-bold lg:mb-[48px] lg:text-[2.7em]'>
+			<h2 className='mb-[16px] text-[1.7em] font-bold lg:mb-[20px] lg:text-[2.7em]'>
 				Molo Information Gallery Clothes
 			</h2>
 			<p className='mb-[24px] text-[0.94em] leading-[24px] lg:mb-[37px] lg:text-[0.90em]'>
