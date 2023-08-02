@@ -36,14 +36,14 @@ const Info = () => {
 			<div className='mb-[24px] flex items-center justify-between lg:flex-col lg:items-start'>
 				<p className='flex items-center gap-[18px] text-[1.8em] font-bold'>
 					${price}
-					{/* <span className='rounded-[8px] bg-red-500 bg-opacity-[0.1] p-[4px] text-[0.5em] text-red-500'>
+					<span className='rounded-[8px] bg-red-500 bg-opacity-[0.1] p-[4px] text-[0.5em] text-red-500'>
 						50%
-					</span> */}
+					</span>
 				</p>
-				{/* <p className='text-bold text-azul line-through'>$250.00</p> */}
+				<p className='text-bold text-azul line-through'>$250.00</p>
 			</div>
-			<div>
-				<ul className='mb-[24px] flex h-[40px] cursor-pointer items-center justify-between'>
+			<div className='flex justify-center'>
+				<ul className='mb-[24px] flex h-[40px] w-[250px] cursor-pointer items-center justify-between'>
 					<li
 						className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul focus:bg-azul ${
 							selectedSize === 'XS' ? 'bg-azul' : 'hover:bg-azul'
