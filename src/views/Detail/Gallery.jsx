@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import previous from '../../assets/images/previous.svg';
 import next from '../../assets/images/next.svg';
 import image1 from '../../assets/images/1.jpg';
@@ -5,19 +6,22 @@ import image2 from '../../assets/images/2.jpeg';
 import image3 from '../../assets/images/3.jpg';
 import image4 from '../../assets/images/4.jpg';
 
-const Gallery = () => {
+const Gallery = ({ modalGalleryOC }) => {
 	return (
 		<article className='lg:w-[446px]'>
-			<div className='relative h-[300px] w-full bg-gallery-image bg-cover bg-center lg:h-[446px] lg:rounded-[16px] lg:hover:cursor-pointer'>
+			<div
+				className='relative mb-[15px] h-[300px] w-full bg-gallery-image bg-cover bg-center lg:h-[446px] lg:rounded-[16px] lg:hover:cursor-pointer'
+				onClick={modalGalleryOC}
+			>
 				<img
 					src={previous}
 					alt='previous'
-					className='absolute left-[10px] top-[140px] h-[40px] w-[40px] cursor-pointer rounded-[50%] bg-blanco lg:hidden'
+					className='absolute left-[10px] top-[140px] h-[40px] w-[40px] cursor-pointer rounded-[50%] lg:hidden'
 				/>
 				<img
 					src={next}
 					alt='next'
-					className='absolute right-[10px] top-[140px] h-[40px] w-[40px] cursor-pointer rounded-[50%] bg-blanco lg:hidden'
+					className='absolute right-[10px] top-[140px] h-[40px] w-[40px] cursor-pointer rounded-[50%] lg:hidden'
 				/>
 			</div>
 			<div className='hidden lg:flex lg:justify-between lg:hover:cursor-pointer'>
@@ -48,6 +52,10 @@ const Gallery = () => {
 			</div>
 		</article>
 	);
+};
+
+Gallery.propTypes = {
+	modalGalleryOC: PropTypes.func.isRequired,
 };
 
 export default Gallery;

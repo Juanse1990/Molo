@@ -49,7 +49,7 @@ const NavBar = () => {
 						<img
 							src={avatar}
 							alt='avatar'
-							className='w-[30px] hover:cursor-pointer hover:rounded-[50%] hover:border-[2px] hover:border-azul lg:w-[48px]'
+							className='w-[30px] cursor-pointer lg:w-[48px]'
 						/>
 					</div>
 				</header>

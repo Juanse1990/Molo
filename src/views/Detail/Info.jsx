@@ -16,7 +16,7 @@ const Info = () => {
 			<h2 className='mb-[16px] text-[1.7em] font-bold lg:mb-[20px] lg:text-[2.7em]'>
 				Molo Information Gallery Clothes
 			</h2>
-			<p className='mb-[24px] text-[0.94em] leading-[24px] lg:mb-[37px] lg:text-[0.90em]'>
+			<p className='mb-[24px] text-[0.94em] leading-[24px] lg:mb-[30px] lg:text-[0.90em]'>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem,
 				ab? Incidunt eius, tempore quidem iste saepe minus aspernatur ipsum
 				ipsa! Eveniet suscipit accusantium deserunt dignissimos atque commodi
@@ -34,7 +34,7 @@ const Info = () => {
 			<div>
 				<ul className='mb-[24px] flex h-[40px] cursor-pointer items-center justify-between'>
 					<li
-						className={`h-[25px] w-[22px] rounded-[8px] px-[1px] hover:bg-azul focus:bg-azul ${
+						className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul focus:bg-azul ${
 							selectedSize === 'XS' ? 'bg-azul' : 'hover:bg-azul'
 						}`}
 						onClick={() => handleSizeClick('XS')}
@@ -42,7 +42,7 @@ const Info = () => {
 						XS
 					</li>
 					<li
-						className={`h-[25px] w-[15px] rounded-[8px] px-[2px] hover:bg-azul ${
+						className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
 							selectedSize === 'S' ? 'bg-azul' : 'hover:bg-azul'
 						}`}
 						onClick={() => handleSizeClick('S')}
@@ -50,7 +50,7 @@ const Info = () => {
 						S
 					</li>
 					<li
-						className={`h-[25px] w-[15px] rounded-[8px] hover:bg-azul ${
+						className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
 							selectedSize === 'M' ? 'bg-azul' : 'hover:bg-azul'
 						}`}
 						onClick={() => handleSizeClick('M')}
@@ -58,7 +58,7 @@ const Info = () => {
 						M
 					</li>
 					<li
-						className={`h-[25px] w-[15px] rounded-[8px] px-[3px] hover:bg-azul ${
+						className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
 							selectedSize === 'L' ? 'bg-azul' : 'hover:bg-azul'
 						}`}
 						onClick={() => handleSizeClick('L')}
@@ -66,7 +66,7 @@ const Info = () => {
 						L
 					</li>
 					<li
-						className={`h-[25px] w-[22px] rounded-[8px] px-[1px] hover:bg-azul ${
+						className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
 							selectedSize === 'XL' ? 'bg-azul' : 'hover:bg-azul'
 						}`}
 						onClick={() => handleSizeClick('XL')}
@@ -74,7 +74,7 @@ const Info = () => {
 						XL
 					</li>
 					<li
-						className={`h-[25px] w-[30px] rounded-[8px] hover:bg-azul ${
+						className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
 							selectedSize === 'XXL' ? 'bg-azul' : 'hover:bg-azul'
 						}`}
 						onClick={() => handleSizeClick('XXL')}
