@@ -1,16 +1,13 @@
 import { Link } from 'react-router-dom';
 
-const Home = () => {
+const Products = () => {
 	return (
 		<div>
 			<Link to={'/detail'} className='text-[3em]'>
 				Go to Detail!
 			</Link>
-			<Link to={'/products'} className='text-[3em]'>
-				Go to Products!
-			</Link>
 		</div>
 	);
 };
 
-export default Home;
+export default Products;
