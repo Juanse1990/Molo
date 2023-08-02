@@ -22,7 +22,7 @@ const NavBar = () => {
 		<>
 			<div className='relative m-auto w-[375px] lg:w-[1115px]'>
 				<header className='relative m-auto flex h-[68px] w-[375px] items-center justify-between px-[24px] lg:h-[112px] lg:w-[1115px] lg:border-b-[1px] lg:border-b-azul'>
-					<div className='flex h-full w-[175px] items-center justify-between lg:w-[700px]'>
+					<div className='flex h-full w-[175px] items-center justify-between lg:w-[850px]'>
 						<img
 							src={menu}
 							alt='menu icon'
@@ -36,7 +36,7 @@ const NavBar = () => {
 					</div>
 					<div className='flex w-[70px] items-center justify-between lg:w-[125px]'>
 						<div className='relative cursor-pointer'>
-							<div className='absolute ml-[-3px] mt-[-2px] hidden h-[12px] w-[15px] rounded-[16px] bg-orange-400 text-center text-[0.6em] text-blanco'>
+							<div className='absolute ml-[-3px] mt-[-2px] h-[12px] w-[15px] rounded-[16px] bg-azul text-center text-[0.6em] text-blanco lg:ml-[-5px] lg:mt-[3px]'>
 								3
 							</div>
 							<img
