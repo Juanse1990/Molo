@@ -1,0 +1,1 @@
+export const MODAL_CART_INFO = "MODAL_CART_INFO";

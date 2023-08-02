@@ -1,7 +1,5 @@
 import { useState } from 'react';
-import Gallery from './Gallery';
-import Info from './Info';
-import ModalGallery from './ModalGallery';
+import { Gallery, Info, ModalGallery } from './index';
 
 const Detail = () => {
 	const [modalGallery, setModalGallery] = useState(false);

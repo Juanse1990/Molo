@@ -6,10 +6,12 @@ import ModalMenu from './ModalMenu';
 import cart from '../../assets/images/cart.svg';
 import avatar from '../../assets/images/avatar.png';
 import ModalCart from '../Cart/ModalCart';
+import { useSelector } from 'react-redux';
 
 const NavBar = () => {
 	const [modalMenu, setModalMenu] = useState(false);
 	const [modalCart, setModalCart] = useState(false);
+	const quantity = useSelector((state) => state.quantity);
 
 	const modalMenuOC = () => {
 		setModalMenu(!modalMenu);
@@ -37,7 +39,7 @@ const NavBar = () => {
 					<div className='flex w-[70px] items-center justify-between lg:w-[125px]'>
 						<div className='relative cursor-pointer'>
 							<div className='absolute ml-[-3px] mt-[-2px] h-[12px] w-[15px] rounded-[16px] bg-azul text-center text-[0.6em] text-blanco lg:ml-[-5px] lg:mt-[3px]'>
-								3
+								{quantity}
 							</div>
 							<img
 								src={cart}
