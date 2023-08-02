@@ -3,9 +3,20 @@ import cart from '../../assets/images/cart-white.svg';
 
 const Info = () => {
 	const [selectedSize, setSelectedSize] = useState(null);
+	const [quantity, setQuantity] = useState(1);
+	const price = 125;
 
 	const handleSizeClick = (size) => {
 		setSelectedSize(size);
+	};
+	const DQuantity = () => {
+		if (quantity > 1) setQuantity(quantity - 1);
+	};
+	const IQuantity = () => {
+		setQuantity(quantity + 1);
+	};
+	const handleInputChange = (event) => {
+		setQuantity(event.target.value);
 	};
 
 	return (
@@ -24,12 +35,12 @@ const Info = () => {
 			</p>
 			<div className='mb-[24px] flex items-center justify-between lg:flex-col lg:items-start'>
 				<p className='flex items-center gap-[18px] text-[1.8em] font-bold'>
-					$125.00{' '}
-					<span className='rounded-[8px] bg-red-500 bg-opacity-[0.1] p-[4px] text-[0.5em] text-red-500'>
+					${price}
+					{/* <span className='rounded-[8px] bg-red-500 bg-opacity-[0.1] p-[4px] text-[0.5em] text-red-500'>
 						50%
-					</span>
+					</span> */}
 				</p>
-				<p className='text-bold text-azul line-through'>$250.00</p>
+				{/* <p className='text-bold text-azul line-through'>$250.00</p> */}
 			</div>
 			<div>
 				<ul className='mb-[24px] flex h-[40px] cursor-pointer items-center justify-between'>
@@ -85,15 +96,22 @@ const Info = () => {
 			</div>
 			<div className='lg:flex lg:h-[47px] lg:items-center lg:gap-[32px]'>
 				<div className='mb-[24px] flex h-[40px] items-center text-center lg:mb-[0]'>
-					<p className=' h-full w-[25px] cursor-pointer text-[25px] font-bold text-azul hover:opacity-[0.5]'>
+					<p
+						className=' h-full w-[25px] cursor-pointer text-[25px] font-bold text-azul hover:opacity-[0.5]'
+						onClick={DQuantity}
+					>
 						-
 					</p>
 					<input
 						type='text'
-						value='0'
+						value={quantity}
+						onChange={handleInputChange}
 						className='text-bold w-full border-none text-center text-[1.2em] outline-none'
 					/>
-					<p className='h-full w-[25px] cursor-pointer text-[25px] font-bold text-azul hover:opacity-[0.5]'>
+					<p
+						onClick={IQuantity}
+						className='h-full w-[25px] cursor-pointer text-[25px] font-bold text-azul hover:opacity-[0.5]'
+					>
 						+
 					</p>
 				</div>

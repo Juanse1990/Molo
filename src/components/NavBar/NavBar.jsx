@@ -29,7 +29,7 @@ const NavBar = () => {
 							className='white cursor-pointer lg:hidden'
 							onClick={modalMenuOC}
 						/>
-						<Link to={'/detail'} className='text-[45px] lg:text-[60px]'>
+						<Link to={'/'} className='text-[45px] lg:text-[60px]'>
 							MOLO
 						</Link>
 						<Menu />

@@ -1,9 +1,13 @@
-
+import { Link } from 'react-router-dom';
 
 const Home = () => {
-  return (
-             <div>Home</div>
-  )
-}
+	return (
+		<div>
+			<Link to={'/detail'} className='text-[3em]'>
+				Go to Detail!
+			</Link>
+		</div>
+	);
+};
 
-export default Home
+export default Home;

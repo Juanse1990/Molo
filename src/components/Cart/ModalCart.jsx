@@ -14,6 +14,7 @@ const ModalCart = () => {
 					/>
 					<div>
 						<p>Molo ropa indumentaria</p>
+						<p>Talle: M</p>
 						<p>
 							$125.00 x 3 <span className='font-bold'>$375.00</span>
 						</p>
