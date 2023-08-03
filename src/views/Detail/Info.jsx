@@ -1,8 +1,11 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { modalCartInfo } from '../../redux/actions';
 import cart from '../../assets/images/cart-white.svg';
 
 const Info = () => {
-	const [selectedSize, setSelectedSize] = useState(null);
+	const dispatch = useDispatch();
+	const [selectedSize, setSelectedSize] = useState('');
 	const [quantity, setQuantity] = useState(1);
 	const price = 125;
 
@@ -19,6 +22,12 @@ const Info = () => {
 		setQuantity(event.target.value);
 	};
 
+	const handleSubmit = () => {
+		if (selectedSize !== '') {
+			dispatch(modalCartInfo(selectedSize, quantity, price));
+		}
+	};
+
 	return (
 		<article className='px-[24px] lg:w-[446px]'>
 			<h2 className='mb-[12px] text-[0.8em] uppercase tracking-[1px] text-azul'>
@@ -33,9 +42,9 @@ const Info = () => {
 				ipsa! Eveniet suscipit accusantium deserunt dignissimos atque commodi
 				harum reprehenderit! Earum?
 			</p>
-			<div className='mb-[24px] flex items-center justify-between lg:flex-col lg:items-start'>
+			<div className='mb-[24px] flex items-center justify-between'>
 				<p className='flex items-center gap-[18px] text-[1.8em] font-bold'>
-					${price}
+					${price}.00
 					<span className='rounded-[8px] bg-red-500 bg-opacity-[0.1] p-[4px] text-[0.5em] text-red-500'>
 						50%
 					</span>
@@ -115,7 +124,10 @@ const Info = () => {
 						+
 					</p>
 				</div>
-				<button className='text-bold mb-[30px] flex h-[57px] w-full items-center justify-center gap-[16px] rounded-[8px] bg-azul text-[0.9em] text-blanco hover:opacity-[0.5] lg:mb-[0px]'>
+				<button
+					onClick={handleSubmit}
+					className='text-bold mb-[30px] flex h-[57px] w-full items-center justify-center gap-[16px] rounded-[8px] bg-azul text-[0.9em] text-blanco hover:opacity-[0.5] lg:mb-[0px]'
+				>
 					<img src={cart} alt='carrito' />
 					Añadir al carrito
 				</button>

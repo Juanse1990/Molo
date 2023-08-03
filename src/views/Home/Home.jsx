@@ -6,6 +6,7 @@ const Home = () => {
 			<Link to={'/detail'} className='text-[3em]'>
 				Go to Detail!
 			</Link>
+			<br />
 			<Link to={'/products'} className='text-[3em]'>
 				Go to Products!
 			</Link>
