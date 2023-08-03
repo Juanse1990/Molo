@@ -1,11 +1,17 @@
 import trash from '../../assets/images/delete.svg';
 import image from '../../assets/images/1.jpg';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { modalCartInfo } from '../../redux/actions';
 
 const ModalCart = () => {
+	const dispatch = useDispatch();
 	const size = useSelector((state) => state.size);
 	const quantity = useSelector((state) => state.quantity);
 	const price = useSelector((state) => state.price);
+
+	const handleDelete = () => {
+		dispatch(modalCartInfo('', 0, 0));
+	};
 
 	return (
 		<div className='absolute right-[6px] top-[75px] z-40 h-[260px] w-[360px] rounded-[8px] bg-blanco shadow-lg'>
@@ -22,11 +28,16 @@ const ModalCart = () => {
 							<p>Molo ropa indumentaria</p>
 							<p>Talle: {size}</p>
 							<p>
-								${price}.00 x {quantity}
+								${price}.00 x {quantity}{' '}
 								<span className='font-bold'>${price * quantity}.00</span>
 							</p>
 						</div>
-						<img src={trash} alt='delete' className='cursor-pointer' />
+						<img
+							src={trash}
+							alt='delete'
+							onClick={handleDelete}
+							className='cursor-pointer'
+						/>
 					</div>
 					<button className='text-bold flex h-[57px] w-full items-center justify-center gap-[16px] rounded-[8px] bg-azul text-[0.9em] text-blanco hover:opacity-[0.5]'>
 						Pagar

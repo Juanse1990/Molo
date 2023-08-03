@@ -6,7 +6,7 @@ export const modalCartInfo = (selectedSize, quantity, price) => {
     payload: {
       selectedSize,
       quantity,
-      price,
+      price
     },
   };
 };

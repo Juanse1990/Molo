@@ -1,5 +1,5 @@
 import { Link, Outlet } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Menu from './Menu';
 import menu from '../../assets/images/menu.svg';
 import ModalMenu from './ModalMenu';
@@ -19,6 +19,13 @@ const NavBar = () => {
 	const modalCartOC = () => {
 		setModalCart(!modalCart);
 	};
+	useEffect(() => {
+		if (quantity) {
+			setModalCart(true);
+		} else {
+			setModalCart(false);
+		}
+	}, [quantity]);
 
 	return (
 		<>
