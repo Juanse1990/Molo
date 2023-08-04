@@ -19,7 +19,7 @@ const initialState = {
           "nombre": "Remera 2",
           "descripcion": "Descripción de la remera 2",
           "precio": 29.99,
-          "descuento": null,
+          "descuento": 0,
           "talles": ["s", "m", "l", "xl"]
         },
         {
@@ -39,7 +39,7 @@ const initialState = {
           "nombre": "Buzo 1",
           "descripcion": "Descripción del buzo 1",
           "precio": 45.99,
-          "descuento": null,
+          "descuento": 0,
           "talles": ["s", "m", "l"]
         },
         {
@@ -69,7 +69,7 @@ const initialState = {
           "nombre": "Pantalón 2",
           "descripcion": "Descripción del pantalón 2",
           "precio": 29.99,
-          "descuento": null,
+          "descuento": 0,
           "talles": ["s", "m", "l"]
         },
         {
@@ -89,7 +89,7 @@ const initialState = {
           "nombre": "Remera 2",
           "descripcion": "Descripción de la remera 2",
           "precio": 29.99,
-          "descuento": null,
+          "descuento": 0,
           "talles": ["s", "m", "l", "xl"]
         },
         {
@@ -109,7 +109,7 @@ const initialState = {
           "nombre": "Buzo 1",
           "descripcion": "Descripción del buzo 1",
           "precio": 45.99,
-          "descuento": null,
+          "descuento": 0,
           "talles": ["s", "m", "l"]
         },
         {
@@ -139,7 +139,7 @@ const initialState = {
           "nombre": "Pantalón 2",
           "descripcion": "Descripción del pantalón 2",
           "precio": 29.99,
-          "descuento": null,
+          "descuento": 0,
           "talles": ["s", "m", "l"]
         },
         {
@@ -159,7 +159,7 @@ const initialState = {
           "nombre": "Remera 2",
           "descripcion": "Descripción de la remera 2",
           "precio": 29.99,
-          "descuento": null,
+          "descuento": 0,
           "talles": ["s", "m", "l", "xl"]
         },
         {
@@ -179,13 +179,13 @@ const initialState = {
           "nombre": "Buzo 1",
           "descripcion": "Descripción del buzo 1",
           "precio": 45.99,
-          "descuento": null,
+          "descuento": 0,
           "talles": ["s", "m", "l"]
         },
         {
           "marca": "BASSET",
           "prenda": "buzo",
-          "id": "18",
+          "id": "19",
           "nombre": "Buzo 2",
           "descripcion": "Descripción del buzo 2",
           "precio": 39.99,
@@ -195,7 +195,7 @@ const initialState = {
         {
           "marca": "BASSET",
           "prenda": "pantalón",
-          "id": "19",
+          "id": "20",
           "nombre": "Pantalón 1",
           "descripcion": "Descripción del pantalón 1",
           "precio": 34.99,
@@ -205,11 +205,11 @@ const initialState = {
         {
           "marca": "BASSET",
           "prenda": "pantalón",
-          "id": "20",
+          "id": "21",
           "nombre": "Pantalón 2",
           "descripcion": "Descripción del pantalón 2",
           "precio": 29.99,
-          "descuento": null,
+          "descuento": 0,
           "talles": ["s", "m", "l"]
         }
       ],

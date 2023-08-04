@@ -2,11 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
 	return (
-		<div>
-			<Link to={'/detail/5'} className='text-[3em]'>
-				Go to Detail!
-			</Link>
-			<br />
+		<div className='flex justify-center'>
 			<Link to={'/products'} className='text-[3em]'>
 				Go to Products!
 			</Link>
