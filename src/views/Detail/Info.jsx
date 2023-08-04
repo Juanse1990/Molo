@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { modalCartInfo } from '../../redux/actions';
 import cart from '../../assets/images/cart-white.svg';
 
-const Info = () => {
+const Info = ({ cloth }) => {
 	const dispatch = useDispatch();
 	const [selectedSize, setSelectedSize] = useState('');
 	const [quantity, setQuantity] = useState(1);
-	const price = 125;
 
 	const handleSizeClick = (size) => {
 		setSelectedSize(size);
@@ -24,17 +24,22 @@ const Info = () => {
 
 	const handleSubmit = () => {
 		if (selectedSize !== '') {
-			dispatch(modalCartInfo(selectedSize, quantity, price));
+			dispatch(
+				modalCartInfo(cloth.nombre, selectedSize, quantity, priceDiscount),
+			);
 		}
 	};
+	const priceDiscount = cloth.descuento
+		? (cloth.precio - cloth.precio / cloth.descuento).toFixed(2)
+		: cloth.precio;
 
 	return (
 		<article className='px-[24px] lg:w-[446px]'>
 			<h2 className='mb-[12px] text-[0.8em] uppercase tracking-[1px] text-azul'>
-				Molo
+				{cloth.marca}
 			</h2>
 			<h2 className='mb-[16px] text-[1.7em] font-bold lg:mb-[20px] lg:text-[2.7em]'>
-				Molo Information Gallery Clothes
+				{cloth.nombre}
 			</h2>
 			<p className='mb-[24px] text-[0.94em] leading-[24px] lg:mb-[30px] lg:text-[0.90em]'>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem,
@@ -44,63 +49,79 @@ const Info = () => {
 			</p>
 			<div className='mb-[24px] flex items-center justify-between'>
 				<p className='flex items-center gap-[18px] text-[1.8em] font-bold'>
-					${price}.00
-					<span className='rounded-[8px] bg-red-500 bg-opacity-[0.1] p-[4px] text-[0.5em] text-red-500'>
-						50%
-					</span>
+					${priceDiscount}
+					{cloth.descuento ? (
+						<span className='rounded-[8px] bg-red-500 bg-opacity-[0.1] p-[4px] text-[0.5em] text-red-500'>
+							{cloth.descuento}%
+						</span>
+					) : null}
 				</p>
-				<p className='text-bold text-azul line-through'>$250.00</p>
+				{cloth.descuento ? (
+					<p className='text-bold text-azul line-through'>${cloth.precio}</p>
+				) : null}
 			</div>
 			<div className='flex justify-center'>
 				<ul className='mb-[24px] flex h-[40px] w-[250px] cursor-pointer items-center justify-between'>
-					<li
-						className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul focus:bg-azul ${
-							selectedSize === 'XS' ? 'bg-azul' : 'hover:bg-azul'
-						}`}
-						onClick={() => handleSizeClick('XS')}
-					>
-						XS
-					</li>
-					<li
-						className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
-							selectedSize === 'S' ? 'bg-azul' : 'hover:bg-azul'
-						}`}
-						onClick={() => handleSizeClick('S')}
-					>
-						S
-					</li>
-					<li
-						className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
-							selectedSize === 'M' ? 'bg-azul' : 'hover:bg-azul'
-						}`}
-						onClick={() => handleSizeClick('M')}
-					>
-						M
-					</li>
-					<li
-						className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
-							selectedSize === 'L' ? 'bg-azul' : 'hover:bg-azul'
-						}`}
-						onClick={() => handleSizeClick('L')}
-					>
-						L
-					</li>
-					<li
-						className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
-							selectedSize === 'XL' ? 'bg-azul' : 'hover:bg-azul'
-						}`}
-						onClick={() => handleSizeClick('XL')}
-					>
-						XL
-					</li>
-					<li
-						className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
-							selectedSize === 'XXL' ? 'bg-azul' : 'hover:bg-azul'
-						}`}
-						onClick={() => handleSizeClick('XXL')}
-					>
-						XXL
-					</li>
+					{cloth.talles.includes('xs') ? (
+						<li
+							className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul focus:bg-azul ${
+								selectedSize === 'XS' ? 'bg-azul' : 'hover:bg-azul'
+							}`}
+							onClick={() => handleSizeClick('XS')}
+						>
+							XS
+						</li>
+					) : null}
+					{cloth.talles.includes('s') ? (
+						<li
+							className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
+								selectedSize === 'S' ? 'bg-azul' : 'hover:bg-azul'
+							}`}
+							onClick={() => handleSizeClick('S')}
+						>
+							S
+						</li>
+					) : null}
+					{cloth.talles.includes('m') ? (
+						<li
+							className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
+								selectedSize === 'M' ? 'bg-azul' : 'hover:bg-azul'
+							}`}
+							onClick={() => handleSizeClick('M')}
+						>
+							M
+						</li>
+					) : null}
+					{cloth.talles.includes('l') ? (
+						<li
+							className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
+								selectedSize === 'L' ? 'bg-azul' : 'hover:bg-azul'
+							}`}
+							onClick={() => handleSizeClick('L')}
+						>
+							L
+						</li>
+					) : null}
+					{cloth.talles.includes('xl') ? (
+						<li
+							className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
+								selectedSize === 'XL' ? 'bg-azul' : 'hover:bg-azul'
+							}`}
+							onClick={() => handleSizeClick('XL')}
+						>
+							XL
+						</li>
+					) : null}
+					{cloth.talles.includes('xxl') ? (
+						<li
+							className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
+								selectedSize === 'XXL' ? 'bg-azul' : 'hover:bg-azul'
+							}`}
+							onClick={() => handleSizeClick('XXL')}
+						>
+							XXL
+						</li>
+					) : null}
 				</ul>
 			</div>
 			<div className='lg:flex lg:h-[47px] lg:items-center lg:gap-[32px]'>
@@ -134,6 +155,10 @@ const Info = () => {
 			</div>
 		</article>
 	);
+};
+
+Info.propTypes = {
+	cloth: PropTypes.func.isRequired,
 };
 
 export default Info;

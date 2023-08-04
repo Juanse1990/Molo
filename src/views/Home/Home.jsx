@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
 	return (
 		<div>
-			<Link to={'/detail'} className='text-[3em]'>
+			<Link to={'/detail/5'} className='text-[3em]'>
 				Go to Detail!
 			</Link>
 			<br />
