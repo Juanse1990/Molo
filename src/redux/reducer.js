@@ -46,7 +46,7 @@ const initialState = {
           "marca": "FUARK",
           "prenda": "buzo",
           "id": "5",
-          "nombre": "Buzo 2",
+          "nombre": "Buzo Azul Oversize",
           "descripcion": "Descripción del buzo 2",
           "precio": 39.99,
           "descuento": 10,

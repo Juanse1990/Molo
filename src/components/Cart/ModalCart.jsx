@@ -23,7 +23,7 @@ const ModalCart = () => {
 						<img
 							src={image}
 							alt='image'
-							className='h-[50px] w-[50px] rounded-[4px]'
+							className='h-[60px] w-[60px] rounded-[4px]'
 						/>
 						<div>
 							<p>{name}</p>

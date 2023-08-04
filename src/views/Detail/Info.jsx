@@ -34,7 +34,7 @@ const Info = ({ cloth }) => {
 		: cloth.precio;
 
 	return (
-		<article className='px-[24px] lg:w-[446px]'>
+		<article className='px-[24px] lg:my-[50px] lg:w-[446px]'>
 			<h2 className='mb-[12px] text-[0.8em] uppercase tracking-[1px] text-azul'>
 				{cloth.marca}
 			</h2>
