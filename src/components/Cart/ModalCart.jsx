@@ -5,12 +5,13 @@ import { modalCartInfo } from '../../redux/actions';
 
 const ModalCart = () => {
 	const dispatch = useDispatch();
+	const name = useSelector((state) => state.name);
 	const size = useSelector((state) => state.size);
 	const quantity = useSelector((state) => state.quantity);
 	const price = useSelector((state) => state.price);
 
 	const handleDelete = () => {
-		dispatch(modalCartInfo('', 0, 0));
+		dispatch(modalCartInfo('', '', 0, 0));
 	};
 
 	return (
@@ -22,14 +23,16 @@ const ModalCart = () => {
 						<img
 							src={image}
 							alt='image'
-							className='h-[50px] w-[50px] rounded-[4px]'
+							className='h-[60px] w-[60px] rounded-[4px]'
 						/>
 						<div>
-							<p>Molo ropa indumentaria</p>
+							<p>{name}</p>
 							<p>Talle: {size}</p>
 							<p>
-								${price}.00 x {quantity}{' '}
-								<span className='font-bold'>${price * quantity}.00</span>
+								${price} x {quantity}{' '}
+								<span className='font-bold'>
+									${(price * quantity).toFixed(2)}
+								</span>
 							</p>
 						</div>
 						<img

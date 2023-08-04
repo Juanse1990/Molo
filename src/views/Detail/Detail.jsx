@@ -4,11 +4,17 @@ import image1 from '../../assets/images/1.jpg';
 import image2 from '../../assets/images/2.jpeg';
 import image3 from '../../assets/images/3.jpg';
 import image4 from '../../assets/images/4.jpg';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 const Detail = () => {
 	const [modalGallery, setModalGallery] = useState(false);
 	const [imageIndex, setImageIndex] = useState(0);
-	const images = [image1, image2, image3, image4];
+	const { id } = useParams();
+	const imageIndexFunction = () => imageIndex;
+	const images = () => [image1, image2, image3, image4];
+	const data = useSelector((state) => state.data);
+	const cloth = data.filter((item) => item.id === id);
 
 	const modalGalleryOC = () => {
 		setModalGallery(!modalGallery);
@@ -19,15 +25,15 @@ const Detail = () => {
 			<Gallery
 				modalGalleryOC={modalGalleryOC}
 				images={images}
-				imageIndex={imageIndex}
+				imageIndex={imageIndexFunction}
 				setImageIndex={setImageIndex}
 			/>
-			<Info />
+			<Info cloth={cloth[0]} />
 			{modalGallery && (
 				<ModalGallery
 					modalGalleryOC={modalGalleryOC}
 					images={images}
-					imageIndex={imageIndex}
+					imageIndex={imageIndexFunction}
 					setImageIndex={setImageIndex}
 				/>
 			)}

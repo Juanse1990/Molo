@@ -22,7 +22,7 @@ const ModalGallery = ({
 				</div>
 				<div className='relative mb-[15px] h-[375px] w-full lg:h-[446px] lg:rounded-[16px]'>
 					<img
-						src={images[imageIndex]}
+						src={images()[imageIndex()]}
 						alt='imagen'
 						className='relative h-full w-full lg:h-[446px] lg:rounded-[16px]'
 					/>
@@ -30,7 +30,7 @@ const ModalGallery = ({
 						src={previous}
 						alt='previous'
 						onClick={() => {
-							if (imageIndex > 0) setImageIndex(imageIndex - 1);
+							if (imageIndex() > 0) setImageIndex(imageIndex() - 1);
 						}}
 						className='absolute left-[10px] top-[203px] h-[40px] w-[40px] cursor-pointer rounded-[50%]'
 					/>
@@ -38,7 +38,7 @@ const ModalGallery = ({
 						src={next}
 						alt='next'
 						onClick={() => {
-							if (imageIndex < 3) setImageIndex(imageIndex + 1);
+							if (imageIndex() < 3) setImageIndex(imageIndex() + 1);
 						}}
 						className='absolute right-[10px] top-[203px] h-[40px] w-[40px] cursor-pointer rounded-[50%]'
 					/>
@@ -46,7 +46,7 @@ const ModalGallery = ({
 				<div className='flex justify-between'>
 					<img
 						id='1'
-						src={images[0]}
+						src={images()[0]}
 						alt='imagen'
 						onClick={() => {
 							setImageIndex(0);
@@ -55,7 +55,7 @@ const ModalGallery = ({
 					/>
 					<img
 						id='2'
-						src={images[1]}
+						src={images()[1]}
 						alt='imagen'
 						onClick={() => {
 							setImageIndex(1);
@@ -64,7 +64,7 @@ const ModalGallery = ({
 					/>
 					<img
 						id='3'
-						src={images[2]}
+						src={images()[2]}
 						alt='imagen'
 						onClick={() => {
 							setImageIndex(2);
@@ -73,7 +73,7 @@ const ModalGallery = ({
 					/>
 					<img
 						id='4'
-						src={images[3]}
+						src={images()[3]}
 						alt='imagen'
 						onClick={() => {
 							setImageIndex(3);

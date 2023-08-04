@@ -10,7 +10,7 @@ const RouterProvider = () => {
 			<Routes>
 				<Route element={<NavBar />}>
 					<Route path={'/'} element={<Home />} />
-					<Route path={'/detail'} element={<Detail />} />
+					<Route path={'/detail/:id'} element={<Detail />} />
 					<Route path={'/products'} element={<Products />} />
 				</Route>
 			</Routes>

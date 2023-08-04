@@ -7,7 +7,7 @@ const Gallery = ({ modalGalleryOC, images, imageIndex, setImageIndex }) => {
 		<article className='lg:w-[446px]'>
 			<div className='relative mb-[15px] h-[375px] w-full lg:h-[446px] lg:rounded-[16px] lg:hover:cursor-pointer'>
 				<img
-					src={images[imageIndex]}
+					src={images()[imageIndex()]}
 					alt='imagen'
 					onClick={modalGalleryOC}
 					className='relative h-full w-full lg:h-[446px] lg:rounded-[16px]'
@@ -32,7 +32,7 @@ const Gallery = ({ modalGalleryOC, images, imageIndex, setImageIndex }) => {
 			<div className='hidden lg:flex lg:justify-between'>
 				<img
 					id='1'
-					src={images[0]}
+					src={images()[0]}
 					alt='imagen'
 					onClick={() => {
 						setImageIndex(0);
@@ -41,7 +41,7 @@ const Gallery = ({ modalGalleryOC, images, imageIndex, setImageIndex }) => {
 				/>
 				<img
 					id='2'
-					src={images[1]}
+					src={images()[1]}
 					alt='imagen'
 					onClick={() => {
 						setImageIndex(1);
@@ -50,7 +50,7 @@ const Gallery = ({ modalGalleryOC, images, imageIndex, setImageIndex }) => {
 				/>
 				<img
 					id='3'
-					src={images[2]}
+					src={images()[2]}
 					alt='imagen'
 					onClick={() => {
 						setImageIndex(2);
@@ -59,7 +59,7 @@ const Gallery = ({ modalGalleryOC, images, imageIndex, setImageIndex }) => {
 				/>
 				<img
 					id='4'
-					src={images[3]}
+					src={images()[3]}
 					alt='imagen'
 					onClick={() => {
 						setImageIndex(3);
