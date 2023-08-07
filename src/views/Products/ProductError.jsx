@@ -10,7 +10,7 @@ const ProductError = () => {
 					<p className='pb-3 pt-1 text-xl'>No hay productos disponibles.</p>
 				</div>
 			</div>
-			<div className=' h-[500px] w-[1115px] bg-error-image'></div>
+			<div className='h-[500px] w-[327px] bg-error-image lg:w-[1070px]'></div>
 		</div>
 	);
 };

@@ -36,7 +36,7 @@ const Menu = ({ modalMenuOC }) => {
 					<li className='h-[112px] pt-[42px] hover:border-b-4 hover:border-azul'>
 						<Link>Contacto</Link>
 					</li>
-					<Search />
+					<Search modalMenuOC={modalMenuOC} />
 				</ul>
 			</nav>
 		</>
