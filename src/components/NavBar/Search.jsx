@@ -2,16 +2,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import search from '../../assets/images/search.svg';
 import { useState } from 'react';
 import { FILTER_DATA } from '../../redux/actions_types';
+import { useNavigate } from 'react-router-dom';
 
 const Search = () => {
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 	const data = useSelector((state) => state.data);
 	const [filterSearch, setFilterSearch] = useState('');
 
 	const filterData = (event) => {
 		const searchFil = event.target.value;
 		setFilterSearch(searchFil);
-
+		navigate('/products');
 		const filteredData = data.filter((item) => {
 			const itemText = item.nombre.toLowerCase();
 			return itemText.includes(searchFil.toLowerCase());
