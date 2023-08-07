@@ -13,8 +13,8 @@ const Detail = () => {
 	const { id } = useParams();
 	const imageIndexFunction = () => imageIndex;
 	const images = () => [image1, image2, image3, image4];
-	const data = useSelector((state) => state.data);
-	const cloth = data.filter((item) => item.id === id);
+	const filteredData = useSelector((state) => state.filteredData);
+	const cloth = filteredData.filter((item) => item.id === id);
 
 	const modalGalleryOC = () => {
 		setModalGallery(!modalGallery);
