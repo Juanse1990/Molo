@@ -40,7 +40,7 @@ const NavBar = () => {
 						<Link to={'/'} className='text-[45px] lg:text-[60px]'>
 							MOLO
 						</Link>
-						<Menu />
+						<Menu modalMenuOC={modalMenuOC}/>
 					</div>
 					<div className='flex w-[70px] items-center justify-between lg:w-[125px]'>
 						<div className='relative cursor-pointer'>
