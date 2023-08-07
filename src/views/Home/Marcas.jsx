@@ -1,6 +1,7 @@
 import FuarkLogo from '../../assets/images/FuarkLogo.png';
 import BassetLogo from '../../assets/images/BassetLogo.png';
 import AguaFitnessLogo from '../../assets/images/AguaFitnessLogo.png';
+import YakkaLogo from '../../assets/images/YakkaLogo.png';
 
 const Marcas = () => {
 	return (
@@ -28,6 +29,13 @@ const Marcas = () => {
 					<img
 						src={AguaFitnessLogo}
 						alt='Agua Fitness'
+						className='h-auto w-[90px] lg:w-[150px]'
+					/>
+				</li>
+				<li>
+					<img
+						src={YakkaLogo}
+						alt='Yakka'
 						className='h-auto w-[90px] lg:w-[150px]'
 					/>
 				</li>
