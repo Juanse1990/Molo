@@ -1,11 +1,7 @@
-import { Link } from 'react-router-dom';
-
 const Home = () => {
 	return (
-		<div className='flex justify-center'>
-			<Link to={'/products'} className='text-[3em]'>
-				Go to Products!
-			</Link>
+		<div className='flex w-full items-center'>
+			<div className='mt-5 h-[500px] w-[1115px] bg-error-image'></div>
 		</div>
 	);
 };
