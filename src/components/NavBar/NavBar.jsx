@@ -1,8 +1,7 @@
 import { Link, Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import Menu from './Menu';
 import menu from '../../assets/images/menu.svg';
-import ModalMenu from './ModalMenu';
+import { Menu, ModalMenu } from './index';
 import cart from '../../assets/images/cart.svg';
 import avatar from '../../assets/images/avatar.png';
 import ModalCart from '../Cart/ModalCart';

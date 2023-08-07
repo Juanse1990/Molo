@@ -8,7 +8,7 @@ const ProductCard = ({ item }) => {
 		: item.precio;
 	console.log(item);
 	return (
-		<li className='h-[570px] w-[325px] cursor-pointer py-8 lg:h-[515px] lg:w-[275px]'>
+		<li className='h-[570px] w-[325px] cursor-pointer pt-8 lg:h-[515px] lg:w-[275px]'>
 			<Link to={`/detail/${item.id}`}>
 				<div className='group flex h-full flex-col rounded-2xl border shadow-md duration-300 hover:scale-95 hover:shadow-xl'>
 					<div className='h-1/2'>
