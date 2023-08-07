@@ -16,7 +16,7 @@ const Gallery = ({ modalGalleryOC, images, imageIndex, setImageIndex }) => {
 					src={previous}
 					alt='previous'
 					onClick={() => {
-						if (imageIndex > 0) setImageIndex(imageIndex - 1);
+						if (imageIndex() > 0) setImageIndex(imageIndex() - 1);
 					}}
 					className='absolute left-[10px] top-[167px] h-[40px] w-[40px] cursor-pointer rounded-[50%] lg:hidden'
 				/>
@@ -24,7 +24,7 @@ const Gallery = ({ modalGalleryOC, images, imageIndex, setImageIndex }) => {
 					src={next}
 					alt='next'
 					onClick={() => {
-						if (imageIndex < 3) setImageIndex(imageIndex + 1);
+						if (imageIndex() < 3) setImageIndex(imageIndex() + 1);
 					}}
 					className='absolute right-[10px] top-[167px] h-[40px] w-[40px] cursor-pointer rounded-[50%] lg:hidden'
 				/>
