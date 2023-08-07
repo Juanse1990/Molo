@@ -3,6 +3,7 @@ import Home from '../views/Home/Home';
 import NavBar from '../components/NavBar/NavBar';
 import Detail from '../views/Detail/Detail';
 import Products from '../views/Products/Products';
+import Footer from '../components/Footer/Footer';
 
 const RouterProvider = () => {
 	return (
@@ -14,6 +15,7 @@ const RouterProvider = () => {
 					<Route path={'/products'} element={<Products />} />
 				</Route>
 			</Routes>
+			<Footer />
 		</BrowserRouter>
 	);
 };
