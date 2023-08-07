@@ -79,7 +79,7 @@ const data = [
 		genero: 'hombre',
 	},
 	{
-		marca: 'AGUA FiTNESS',
+		marca: 'AGUA FITNESS',
 		prenda: 'remera',
 		id: '8',
 		nombre: 'Remera 1',
@@ -90,7 +90,7 @@ const data = [
 		genero: 'mujer',
 	},
 	{
-		marca: 'AGUA FiTNESS',
+		marca: 'AGUA FITNESS',
 		prenda: 'remera',
 		id: '9',
 		nombre: 'Remera 2',
@@ -101,7 +101,7 @@ const data = [
 		genero: 'mujer',
 	},
 	{
-		marca: 'AGUA FiTNESS',
+		marca: 'AGUA FITNESS',
 		prenda: 'remera',
 		id: '10',
 		nombre: 'Remera 3',
@@ -112,7 +112,7 @@ const data = [
 		genero: 'mujer',
 	},
 	{
-		marca: 'AGUA FiTNESS',
+		marca: 'AGUA FITNESS',
 		prenda: 'buzo',
 		id: '11',
 		nombre: 'Buzo 1',
@@ -123,7 +123,7 @@ const data = [
 		genero: 'mujer',
 	},
 	{
-		marca: 'AGUA FiTNESS',
+		marca: 'AGUA FITNESS',
 		prenda: 'buzo',
 		id: '12',
 		nombre: 'Buzo 2',
@@ -134,7 +134,7 @@ const data = [
 		genero: 'mujer',
 	},
 	{
-		marca: 'AGUA FiTNESS',
+		marca: 'AGUA FITNESS',
 		prenda: 'pantalón',
 		id: '13',
 		nombre: 'Pantalón 1',
@@ -145,7 +145,7 @@ const data = [
 		genero: 'mujer',
 	},
 	{
-		marca: 'AGUA FiTNESS',
+		marca: 'AGUA FITNESS',
 		prenda: 'pantalón',
 		id: '14',
 		nombre: 'Pantalón 2',

@@ -1,8 +1,16 @@
+import { Marcas } from './index';
+
 const Home = () => {
 	return (
-		<div className='flex w-full items-center'>
-			<div className='mt-5 h-[500px] w-[1115px] bg-error-image'></div>
-		</div>
+		<>
+			<section className='flex w-full items-center justify-center border-b-[1px] border-b-azul lg:w-[1115px]'>
+				<div className='my-5 h-[500px] w-[327px] bg-error-image lg:w-[1070px]'></div>
+			</section>
+			<section className='flex w-full items-center justify-center border-b-[1px] border-b-azul'>
+				<Marcas />
+			</section>
+			<section className='my-5 flex w-full items-center justify-center'></section>
+		</>
 	);
 };
 
