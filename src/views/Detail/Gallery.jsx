@@ -10,7 +10,7 @@ const Gallery = ({ modalGalleryOC, images, imageIndex, setImageIndex }) => {
 					src={images()[imageIndex()]}
 					alt='imagen'
 					onClick={modalGalleryOC}
-					className='relative h-full w-full lg:h-[446px] lg:rounded-[16px]'
+					className='relative h-full w-full object-contain lg:h-[446px] lg:rounded-[16px] lg:bg-error-image'
 				/>
 				<img
 					src={previous}
@@ -37,7 +37,7 @@ const Gallery = ({ modalGalleryOC, images, imageIndex, setImageIndex }) => {
 					onClick={() => {
 						setImageIndex(0);
 					}}
-					className='cursor-pointer lg:h-[90px] lg:w-[90px] lg:rounded-[16px] lg:hover:border-[2px] lg:hover:border-azul'
+					className='cursor-pointer bg-error-image object-contain lg:h-[90px] lg:w-[90px] lg:rounded-[16px] lg:hover:border-[2px] lg:hover:border-azul'
 				/>
 				<img
 					id='2'
@@ -46,7 +46,7 @@ const Gallery = ({ modalGalleryOC, images, imageIndex, setImageIndex }) => {
 					onClick={() => {
 						setImageIndex(1);
 					}}
-					className='cursor-pointer lg:h-[90px] lg:w-[90px] lg:rounded-[16px] lg:hover:border-[2px] lg:hover:border-azul'
+					className='cursor-pointer bg-error-image object-contain lg:h-[90px] lg:w-[90px] lg:rounded-[16px] lg:hover:border-[2px] lg:hover:border-azul'
 				/>
 				<img
 					id='3'
@@ -55,7 +55,7 @@ const Gallery = ({ modalGalleryOC, images, imageIndex, setImageIndex }) => {
 					onClick={() => {
 						setImageIndex(2);
 					}}
-					className='cursor-pointer lg:h-[90px] lg:w-[90px] lg:rounded-[16px] lg:hover:border-[2px] lg:hover:border-azul'
+					className='cursor-pointer bg-error-image object-contain lg:h-[90px] lg:w-[90px] lg:rounded-[16px] lg:hover:border-[2px] lg:hover:border-azul'
 				/>
 				<img
 					id='4'
@@ -64,7 +64,7 @@ const Gallery = ({ modalGalleryOC, images, imageIndex, setImageIndex }) => {
 					onClick={() => {
 						setImageIndex(3);
 					}}
-					className='cursor-pointer lg:h-[90px] lg:w-[90px] lg:rounded-[16px] lg:hover:border-[2px] lg:hover:border-azul'
+					className='cursor-pointer bg-error-image object-contain lg:h-[90px] lg:w-[90px] lg:rounded-[16px] lg:hover:border-[2px] lg:hover:border-azul'
 				/>
 			</div>
 		</article>
