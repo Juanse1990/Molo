@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
 import previous from '../../assets/images/previous.svg';
 import next from '../../assets/images/next.svg';
+import error from '../../assets/images/Error.png';
 
 const Gallery = ({ modalGalleryOC, images, imageIndex, setImageIndex }) => {
 	return (
 		<article className='lg:w-[446px]'>
 			<div className='relative mb-[15px] h-[375px] w-full lg:h-[446px] lg:rounded-[16px] lg:hover:cursor-pointer'>
 				<img
-					src={images()[imageIndex()]}
+					src={images()[imageIndex()] ? images()[imageIndex()] : error}
 					alt='imagen'
 					onClick={modalGalleryOC}
 					className='relative h-full w-full object-contain lg:h-[446px] lg:rounded-[16px] lg:bg-error-image'
@@ -32,7 +33,7 @@ const Gallery = ({ modalGalleryOC, images, imageIndex, setImageIndex }) => {
 			<div className='hidden lg:flex lg:justify-between'>
 				<img
 					id='1'
-					src={images()[0]}
+					src={images()[0] ? images()[0] : error}
 					alt='imagen'
 					onClick={() => {
 						setImageIndex(0);
@@ -41,7 +42,7 @@ const Gallery = ({ modalGalleryOC, images, imageIndex, setImageIndex }) => {
 				/>
 				<img
 					id='2'
-					src={images()[1]}
+					src={images()[1] ? images()[1] : error}
 					alt='imagen'
 					onClick={() => {
 						setImageIndex(1);
@@ -50,7 +51,7 @@ const Gallery = ({ modalGalleryOC, images, imageIndex, setImageIndex }) => {
 				/>
 				<img
 					id='3'
-					src={images()[2]}
+					src={images()[2] ? images()[2] : error}
 					alt='imagen'
 					onClick={() => {
 						setImageIndex(2);
@@ -59,7 +60,7 @@ const Gallery = ({ modalGalleryOC, images, imageIndex, setImageIndex }) => {
 				/>
 				<img
 					id='4'
-					src={images()[3]}
+					src={images()[3] ? images()[3] : error}
 					alt='imagen'
 					onClick={() => {
 						setImageIndex(3);
