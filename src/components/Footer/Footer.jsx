@@ -24,10 +24,10 @@ const Footer = () => {
 	};
 
 	return (
-		<section className='m-auto mt-[15px] w-[375px] bg-azul lg:w-full'>
-			<div className='flex h-[145px] w-[375px] justify-around lg:w-[1115px]'>
-				<ul className='flex w-[90px] flex-col text-center'>
-					<li className='mx-[5px] mt-[10px]'>
+		<section className='m-auto mt-[15px] flex w-[375px] items-center justify-center bg-azul lg:w-full'>
+			<div className='flex h-[140px] w-[375px] justify-around lg:h-[147px] lg:w-[1115px]'>
+				<ul className='flex w-[90px] flex-col text-center lg:w-[350px] '>
+					<li className='mx-[5px] mt-[10px] lg:text-[20px]'>
 						<a className='cursor-pointer font-bold' onClick={scrollToTop}>
 							MOLO
 						</a>
@@ -60,9 +60,9 @@ const Footer = () => {
 						</Link>
 					</li>
 				</ul>
-				<div>
+				<div className='items-centers flex flex-col text-center lg:w-[350px] lg:text-[20px]'>
 					<h2 className='mx-[5px] my-[10px] font-bold'>CONTACTO</h2>
-					<ul className='mx-[5px] my-[10px] flex w-[90px] justify-between text-center'>
+					<ul className='mx-[5px] my-[10px] flex w-[90px] items-center justify-around text-center lg:w-[350px]'>
 						<li>
 							<a
 								href='https://www.instagram.com/moloindumentaria'
@@ -72,7 +72,7 @@ const Footer = () => {
 								<img
 									src={IgLogo}
 									alt='Instagram'
-									className='h-[25px] w-[25px]'
+									className='h-[25px] w-[25px] lg:h-[50px] lg:w-[50px]'
 								/>
 							</a>
 						</li>
@@ -85,7 +85,7 @@ const Footer = () => {
 								<img
 									src={WhatsAppLogo}
 									alt='WhatsApp'
-									className='h-[25px] w-[25px]'
+									className='h-[25px] w-[25px] lg:h-[50px] lg:w-[50px]'
 								/>
 							</a>
 						</li>
@@ -98,13 +98,13 @@ const Footer = () => {
 								<img
 									src={GmailLogo}
 									alt='Correo'
-									className='h-[25px] w-[25px]'
+									className='h-[25px] w-[25px] lg:h-[50px] lg:w-[50px]'
 								/>
 							</a>
 						</li>
 					</ul>
 				</div>
-				<div className='mx-[5px] my-[10px] w-[147px] text-center'>
+				<div className='mx-[5px] my-[10px] w-[147px] text-center lg:w-[350px] lg:text-[20px]'>
 					<h2 className='font-bold'>FORMAS DE PAGO</h2>
 				</div>
 			</div>
