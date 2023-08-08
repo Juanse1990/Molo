@@ -12,6 +12,24 @@ const ModalMenu = ({ modalMenuOC }) => {
 		dispatch(sortGen(gender));
 		modalMenuOC();
 	};
+
+	const scrollToBottom = () => {
+		const body = document.body;
+		const html = document.documentElement;
+		const height = Math.max(
+			body.scrollHeight,
+			body.offsetHeight,
+			html.clientHeight,
+			html.scrollHeight,
+			html.offsetHeight,
+		);
+		window.scrollTo({
+			top: height,
+			behavior: 'smooth',
+		});
+		modalMenuOC();
+	};
+
 	return (
 		<div className='fixed -top-0 z-50 m-[0] flex h-screen w-[375px] bg-negro bg-opacity-70 lg:hidden'>
 			<nav className='p m-0 w-[250px] bg-blanco px-[28px] py-[24px] text-[1.1em] font-bold'>
@@ -22,7 +40,7 @@ const ModalMenu = ({ modalMenuOC }) => {
 					onClick={modalMenuOC}
 				/>
 				<ul className='mt-[50px] flex h-[250px] flex-col justify-between'>
-					<Search modalMenuOC={modalMenuOC}/>
+					<Search modalMenuOC={modalMenuOC} />
 					<li>
 						<Link to={'/products'} onClick={() => handleGender('male')}>
 							Hombre
@@ -42,7 +60,7 @@ const ModalMenu = ({ modalMenuOC }) => {
 						<Link>Nosotros</Link>
 					</li>
 					<li>
-						<Link>Contacto</Link>
+						<button onClick={() => scrollToBottom()}>Contacto</button>
 					</li>
 				</ul>
 			</nav>
