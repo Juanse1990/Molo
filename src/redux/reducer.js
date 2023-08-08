@@ -13,7 +13,7 @@ const data = [
 		precio: 10000.0,
 		descuento: 0,
 		talles: ['xs', 's', 'm', 'l', 'xl', 'xxl'],
-		genero: 'hombre',
+		genero: 'unisex',
 		images: [
 			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/11421-fd6093fdf4a6aad61316766352702557-1024-1024.webp',
 			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/11451-0d4435e62a0ff6036a16766352677646-1024-1024.webp',
@@ -29,8 +29,13 @@ const data = [
 		precio: 9000.0,
 		descuento: 0,
 		talles: ['s', 'm', 'l', 'xl'],
-		genero: 'hombre',
-		images: [image1, image2, image3, image4],
+		genero: 'unisex',
+		images: [
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/seg-basset-2-de-marzo229741-ab61ccedefa477466b16523660396622-1024-1024.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/seg-basset-2-de-marzo229551-9219159a2300260b4716523660397004-1024-1024.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/seg-basset-2-de-marzo229711-63cb29fa84eb84c5bb16523660399053-1024-1024.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/seg-basset-2-de-marzo229681-2f869fc3d31816328816523660397477-1024-1024.webp',
+		],
 	},
 	{
 		marca: 'BASSET',
@@ -41,7 +46,12 @@ const data = [
 		descuento: 0,
 		talles: ['m', 'l', 'xl', 'xxl'],
 		genero: 'hombre',
-		images: [image1, image2, image3, image4],
+		images: [
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/11031-d000f007710a17d2ac16765618432962-1024-1024.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/11161-4f39cf85a7b86a270216765618435645-1024-1024.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/11241-2439a68ca77e2c28ea16765618434458-1024-1024.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/11151-542fe6e519dd1321d216765618433807-1024-1024.webp',
+		],
 	},
 	{
 		marca: 'BASSET',
@@ -52,7 +62,7 @@ const data = [
 		descuento: 0,
 		talles: ['s', 'm', 'l'],
 		genero: 'hombre',
-		images: [image1, image2, image3, image4],
+		images: [],
 	},
 	{
 		marca: 'BASSET',
@@ -63,7 +73,7 @@ const data = [
 		descuento: 0,
 		talles: ['m', 'l', 'xl', 'xxl'],
 		genero: 'hombre',
-		images: [image1, image2, image3, image4],
+		images: [],
 	},
 	{
 		marca: 'BASSET',
@@ -74,7 +84,12 @@ const data = [
 		descuento: 0,
 		talles: ['xs', 's', 'm', 'l', 'xl'],
 		genero: 'mujer',
-		images: [image1, image2, image3, image4],
+		images: [
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/znbasset37181-4a5aa387dd01bdc49316359756738606-1024-1024.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/znbasset370911-e07f09e63a525bfbcf16359756737120-640-0.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/znbasset37061-26f80a950683d475f316359756743160-480-0.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/znbasset36971-6f0c42b13fada0042f16359756738506-480-0.webp',
+		],
 	},
 	{
 		marca: 'BASSET',
@@ -85,7 +100,12 @@ const data = [
 		descuento: 0,
 		talles: ['s', 'm', 'l'],
 		genero: 'mujer',
-		images: [image1, image2, image3, image4],
+		images: [
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/znbasset37091-e07f09e63a525bfbcf16359754692596-1024-1024.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/znbasset36951-911f30cd00218f250816359754696529-480-0.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/zn_359251-10ed903517fe80612016687425621111-480-0.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/zn_358961-3f214edbaa4c48efa416687425621052-480-0.webp',
+		],
 	},
 	{
 		marca: 'BASSET',
@@ -96,7 +116,12 @@ const data = [
 		descuento: 0,
 		talles: ['xs', 's', 'm', 'l', 'xl', 'xxl'],
 		genero: 'mujer',
-		images: [image1, image2, image3, image4],
+		images: [
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/09461-9ec8219772191efd8616764952531933-640-0.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/09511-9803fe804e23cf346b16764952534708-480-0.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/09521-fb56675924a31ba91516764952539593-480-0.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/09451-8297c9a3b4fffb7a3116764952540928-480-0.webp',
+		],
 	},
 	{
 		marca: 'BASSET',
@@ -107,18 +132,28 @@ const data = [
 		descuento: 0,
 		talles: ['s', 'm', 'l', 'xl'],
 		genero: 'mujer',
-		images: [image1, image2, image3, image4],
+		images: [
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/10291-cd9ea4e31de9c9c55b16764950355272-480-0.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/10351-83c197860949a0979a16764950357233-1024-1024.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/10371-70c34de0e759c523e816764950357532-1024-1024.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/10331-fb672386deb32382e816764950355724-480-0.webp',
+		],
 	},
 	{
 		marca: 'BASSET',
 		prenda: 'medias',
 		id: '10',
-		nombre: 'Medias',
+		nombre: 'Pack de Medias',
 		precio: 7000.0,
 		descuento: 0,
 		talles: ['m', 'l', 'xl', 'xxl'],
-		genero: 'mujer',
-		images: [image1, image2, image3, image4],
+		genero: 'unisex',
+		images: [
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/20281-b32a3de968600772ee16776177857988-480-0.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/20221-2d33ec14f2308c91e616776177857542-1024-1024.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/20291-ef1199fc37c750b92916854776616985-480-0.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/20211-8bc62eb5ea0fb5920e16776181988837-1024-1024.webp',
+		],
 	},
 	{
 		marca: 'AGUA FITNESS',
@@ -129,7 +164,11 @@ const data = [
 		descuento: 0,
 		talles: ['s', 'm', 'l'],
 		genero: 'mujer',
-		images: [image1, image2, image3, image4],
+		images: [
+			'https://mayoristas.aguafitness.com/wp-content/uploads/1789-ropa_deportiva_por_mayor_Short_race_amarillo-300x450.jpg',
+			'https://mayoristas.aguafitness.com/wp-content/uploads/1790-ropa_deportiva_por_mayor_Short_race_amarillo_2-300x450.jpg',
+			'https://mayoristas.aguafitness.com/wp-content/uploads/1788-ropa_deportiva_por_mayor_Short_race_negro-300x450.jpg',
+		],
 	},
 	{
 		marca: 'AGUA FITNESS',
