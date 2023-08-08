@@ -7,10 +7,10 @@ const ProductCard = ({ item }) => {
 		? (item().precio - item().precio / item().descuento).toFixed(2)
 		: item().precio;
 	return (
-		<li className='h-[470px] w-[325px] cursor-pointer pt-8 lg:h-[420px] lg:w-[275px]'>
+		<li className='h-[470px] w-[325px] cursor-pointer pt-8 lg:h-[430px] lg:w-[275px]'>
 			<Link to={`/detail/${item().id}`}>
-				<div className='flex h-[450px] flex-col rounded-2xl border shadow-md duration-300 hover:scale-95 hover:shadow-xl lg:h-[400px]'>
-					<div className='h-[55%] lg:h-[55%]'>
+				<div className='flex h-[450px] flex-col rounded-2xl border shadow-md duration-300 hover:scale-95 hover:shadow-xl lg:h-[410px]'>
+					<div className='h-[55%] lg:h-[53%]'>
 						<img
 							className='h-[325px] w-full rounded-t-2xl object-cover lg:h-[275px]'
 							src={image1}
