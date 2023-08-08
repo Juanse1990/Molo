@@ -7,10 +7,10 @@ const ProductCard = ({ item }) => {
 		? (item().precio - item().precio / item().descuento).toFixed(2)
 		: item().precio;
 	return (
-		<li className='h-[570px] w-[325px] cursor-pointer pt-8 lg:h-[515px] lg:w-[275px]'>
+		<li className='h-[570px] w-[325px] cursor-pointer pt-8 lg:h-[420px] lg:w-[275px]'>
 			<Link to={`/detail/${item().id}`}>
-				<div className='group flex h-full flex-col rounded-2xl border shadow-md duration-300 hover:scale-95 hover:shadow-xl'>
-					<div className='h-1/2'>
+				<div className='flex h-[400px] flex-col rounded-2xl border shadow-md duration-300 hover:scale-95 hover:shadow-xl'>
+					<div className='h-[55%]'>
 						<img
 							className='h-[325px] w-full rounded-t-2xl object-cover lg:h-[275px]'
 							src={image1}
@@ -27,12 +27,9 @@ const ProductCard = ({ item }) => {
 							<h3 className='mb-1 mt-2 text-xl font-semibold duration-1000'>
 								{item().nombre}
 							</h3>
-							<p className='h-[50px] overflow-hidden text-sm'>
-								{item().descripcion}
-							</p>
 						</div>
-						<div className='item()s-center flex justify-between'>
-							<p className='item()s-center flex gap-[18px] text-[1.8em] font-bold'>
+						<div className='flex items-center justify-between'>
+							<p className='flex items-center gap-[18px] text-[1.8em] font-bold'>
 								${priceDiscount}
 								{item().descuento ? (
 									<span className='rounded-[8px] bg-red-500 bg-opacity-[0.1] p-[4px] text-[0.5em] text-red-500'>

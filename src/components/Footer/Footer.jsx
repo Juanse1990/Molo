@@ -24,7 +24,7 @@ const Footer = () => {
 	};
 
 	return (
-		<section className='m-auto mt-[15px] flex w-[375px] items-center justify-center bg-azul lg:w-full'>
+		<section className='m-auto mt-[15px] flex w-[375px] items-center justify-center bg-azul lg:mt-[25px] lg:w-full'>
 			<div className='flex h-[140px] w-[375px] justify-around lg:h-[147px] lg:w-[1115px]'>
 				<ul className='flex w-[90px] flex-col text-center lg:w-[350px] '>
 					<li className='mx-[5px] mt-[10px] lg:text-[20px]'>
