@@ -24,7 +24,7 @@ const ModalGallery = ({
 					<img
 						src={images()[imageIndex()]}
 						alt='imagen'
-						className='relative h-full w-full lg:h-[446px] lg:rounded-[16px]'
+						className='relative h-full w-full object-contain lg:h-[446px] lg:rounded-[16px] lg:bg-error-image'
 					/>
 					<img
 						src={previous}
@@ -51,7 +51,7 @@ const ModalGallery = ({
 						onClick={() => {
 							setImageIndex(0);
 						}}
-						className='cursor-pointer lg:h-[90px] lg:w-[90px] lg:rounded-[16px] lg:hover:border-[2px] lg:hover:border-azul'
+						className='cursor-pointer object-contain lg:h-[90px] lg:w-[90px] lg:rounded-[16px] lg:bg-error-image lg:hover:border-[2px] lg:hover:border-azul'
 					/>
 					<img
 						id='2'
@@ -60,7 +60,7 @@ const ModalGallery = ({
 						onClick={() => {
 							setImageIndex(1);
 						}}
-						className='cursor-pointer lg:h-[90px] lg:w-[90px] lg:rounded-[16px] lg:hover:border-[2px] lg:hover:border-azul'
+						className='cursor-pointer object-contain lg:h-[90px] lg:w-[90px] lg:rounded-[16px] lg:bg-error-image lg:hover:border-[2px] lg:hover:border-azul'
 					/>
 					<img
 						id='3'
@@ -69,7 +69,7 @@ const ModalGallery = ({
 						onClick={() => {
 							setImageIndex(2);
 						}}
-						className='cursor-pointer lg:h-[90px] lg:w-[90px] lg:rounded-[16px] lg:hover:border-[2px] lg:hover:border-azul'
+						className='cursor-pointer object-contain lg:h-[90px] lg:w-[90px] lg:rounded-[16px] lg:bg-error-image lg:hover:border-[2px] lg:hover:border-azul'
 					/>
 					<img
 						id='4'
@@ -78,7 +78,7 @@ const ModalGallery = ({
 						onClick={() => {
 							setImageIndex(3);
 						}}
-						className='cursor-pointer lg:h-[90px] lg:w-[90px] lg:rounded-[16px] lg:hover:border-[2px] lg:hover:border-azul'
+						className='cursor-pointer object-contain lg:h-[90px] lg:w-[90px] lg:rounded-[16px] lg:bg-error-image lg:hover:border-[2px] lg:hover:border-azul'
 					/>
 				</div>
 			</article>

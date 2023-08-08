@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import image1 from '../../assets/images/1.jpg';
+import error from '../../assets/images/Error.png';
 import { Link } from 'react-router-dom';
 
 const ProductCard = ({ item }) => {
@@ -12,8 +12,8 @@ const ProductCard = ({ item }) => {
 				<div className='flex h-[450px] flex-col rounded-2xl border shadow-md duration-300 hover:scale-95 hover:shadow-xl lg:h-[410px]'>
 					<div className='h-[55%] lg:h-[53%]'>
 						<img
-							className='h-[325px] w-full rounded-t-2xl object-cover lg:h-[275px]'
-							src={image1}
+							className='h-[325px] w-full rounded-t-2xl bg-error-image object-contain lg:h-[275px]'
+							src={item().images[0] ? item().images[0] : error}
 							alt='image'
 						/>
 					</div>

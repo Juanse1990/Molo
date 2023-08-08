@@ -14,7 +14,12 @@ const data = [
 		descuento: 0,
 		talles: ['xs', 's', 'm', 'l', 'xl', 'xxl'],
 		genero: 'hombre',
-		images: [image1, image2, image3, image4],
+		images: [
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/11421-fd6093fdf4a6aad61316766352702557-1024-1024.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/11451-0d4435e62a0ff6036a16766352677646-1024-1024.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/11341-923c6c4c5d8c65be8216766352678699-480-0.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/11371-0198fabd0075e07d9f16766352685952-480-0.webp',
+		],
 	},
 	{
 		marca: 'BASSET',
