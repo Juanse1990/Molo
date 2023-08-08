@@ -11,6 +11,22 @@ const Menu = ({ modalMenuOC }) => {
 		dispatch(sortGen(gender));
 	};
 
+	const scrollToBottom = () => {
+		const body = document.body;
+		const html = document.documentElement;
+		const height = Math.max(
+			body.scrollHeight,
+			body.offsetHeight,
+			html.clientHeight,
+			html.scrollHeight,
+			html.offsetHeight,
+		);
+		window.scrollTo({
+			top: height,
+			behavior: 'smooth',
+		});
+	};
+
 	return (
 		<>
 			<nav className='hidden w-[800px] lg:block'>
@@ -34,7 +50,7 @@ const Menu = ({ modalMenuOC }) => {
 						<Link>Nosotros</Link>
 					</li>
 					<li className='h-[112px] pt-[42px] hover:border-b-4 hover:border-azul'>
-						<Link>Contacto</Link>
+						<button onClick={() => scrollToBottom()}>Contacto</button>
 					</li>
 					<Search modalMenuOC={modalMenuOC} />
 				</ul>
