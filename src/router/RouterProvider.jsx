@@ -4,6 +4,7 @@ import NavBar from '../components/NavBar/NavBar';
 import Detail from '../views/Detail/Detail';
 import Products from '../views/Products/Products';
 import Footer from '../components/Footer/Footer';
+import AboutUs from '../components/AboutUs/AboutUs';
 
 const RouterProvider = () => {
 	return (
@@ -13,6 +14,7 @@ const RouterProvider = () => {
 					<Route path={'/'} element={<Home />} />
 					<Route path={'/detail/:id'} element={<Detail />} />
 					<Route path={'/products'} element={<Products />} />
+					<Route path={'/aboutus'} element={<AboutUs />} />
 				</Route>
 			</Routes>
 			<Footer />

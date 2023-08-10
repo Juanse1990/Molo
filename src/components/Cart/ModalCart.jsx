@@ -1,5 +1,5 @@
 import trash from '../../assets/images/delete.svg';
-import image from '../../assets/images/1.jpg';
+import image from '../../assets/images/Error.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { modalCartInfo } from '../../redux/actions';
 

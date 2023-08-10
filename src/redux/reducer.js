@@ -1,8 +1,4 @@
 import { FILTER_DATA, MODAL_CART_INFO, SORT_GEN } from './actions_types';
-import image1 from '../assets/images/1.jpg';
-import image2 from '../assets/images/2.jpeg';
-import image3 from '../assets/images/3.jpg';
-import image4 from '../assets/images/4.jpg';
 
 const data = [
 	{
