@@ -57,7 +57,7 @@ const ModalMenu = ({ modalMenuOC }) => {
 						</Link>
 					</li>
 					<li>
-						<Link>Nosotros</Link>
+						<Link to={'/aboutus'}>Nosotros</Link>
 					</li>
 					<li>
 						<button onClick={() => scrollToBottom()}>Contacto</button>

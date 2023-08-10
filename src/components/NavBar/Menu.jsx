@@ -47,7 +47,7 @@ const Menu = ({ modalMenuOC }) => {
 						</Link>
 					</li>
 					<li className='h-[112px] pt-[42px] hover:border-b-4 hover:border-azul'>
-						<Link>Nosotros</Link>
+						<Link to={'/aboutus'}>Nosotros</Link>
 					</li>
 					<li className='h-[112px] pt-[42px] hover:border-b-4 hover:border-azul'>
 						<button onClick={() => scrollToBottom()}>Contacto</button>
