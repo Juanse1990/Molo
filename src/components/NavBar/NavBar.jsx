@@ -6,10 +6,12 @@ import cart from '../../assets/images/cart.svg';
 import avatar from '../../assets/images/avatar.png';
 import ModalCart from '../Cart/ModalCart';
 import { useSelector } from 'react-redux';
+import ModalLogin from '../Login/ModalLogin';
 
 const NavBar = () => {
 	const [modalMenu, setModalMenu] = useState(false);
 	const [modalCart, setModalCart] = useState(false);
+	const [modalLogin, setModalLogin] = useState(false);
 	const quantity = useSelector((state) => state.quantity);
 
 	const modalMenuOC = () => {
@@ -17,6 +19,9 @@ const NavBar = () => {
 	};
 	const modalCartOC = () => {
 		setModalCart(!modalCart);
+	};
+	const modalLoginOC = () => {
+		setModalLogin(!modalLogin);
 	};
 	useEffect(() => {
 		if (quantity) {
@@ -58,11 +63,13 @@ const NavBar = () => {
 							src={avatar}
 							alt='avatar'
 							className='w-[30px] cursor-pointer lg:w-[48px]'
+							onClick={modalLoginOC}
 						/>
 					</div>
 				</header>
 				{modalMenu && <ModalMenu modalMenuOC={modalMenuOC} />}
 				{modalCart && <ModalCart />}
+				{modalLogin && <ModalLogin />}
 				<Outlet />
 			</div>
 		</>
