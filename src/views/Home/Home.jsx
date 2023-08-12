@@ -1,4 +1,4 @@
-import { Marcas } from './index';
+import { Marcas, Discount } from './index';
 
 const Home = () => {
 	return (
@@ -9,7 +9,9 @@ const Home = () => {
 			<section className='flex w-full items-center justify-center border-b-[1px] border-b-azul'>
 				<Marcas />
 			</section>
-			<section className='my-5 flex w-full items-center justify-center'></section>
+			<section className='my-5 flex w-full items-center justify-center'>
+				<Discount />
+			</section>
 		</>
 	);
 };
