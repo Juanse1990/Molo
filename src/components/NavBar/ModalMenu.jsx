@@ -32,7 +32,7 @@ const ModalMenu = ({ modalMenuOC }) => {
 
 	return (
 		<div className='fixed -top-0 z-50 m-[0] flex h-screen w-[375px] bg-negro bg-opacity-70 lg:hidden'>
-			<nav className='p m-0 w-[250px] bg-blanco px-[28px] py-[24px] text-[1.1em] font-bold'>
+			<nav className='m-0 w-[250px] bg-blanco px-[28px] py-[24px] text-[1.1em] font-bold'>
 				<img
 					src={x}
 					alt='x icon'
@@ -57,7 +57,9 @@ const ModalMenu = ({ modalMenuOC }) => {
 						</Link>
 					</li>
 					<li>
-						<Link to={'/aboutus'}>Nosotros</Link>
+						<Link to={'/aboutus'} onClick={modalMenuOC}>
+							Nosotros
+						</Link>
 					</li>
 					<li>
 						<button onClick={() => scrollToBottom()}>Contacto</button>

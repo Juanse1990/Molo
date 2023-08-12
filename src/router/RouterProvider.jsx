@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Home from '../views/Home/Home';
 import NavBar from '../components/NavBar/NavBar';
 import Detail from '../views/Detail/Detail';
@@ -15,6 +15,7 @@ const RouterProvider = () => {
 					<Route path={'/detail/:id'} element={<Detail />} />
 					<Route path={'/products'} element={<Products />} />
 					<Route path={'/aboutus'} element={<AboutUs />} />
+					<Route path={'*'} element={<Navigate to='/' />} />
 				</Route>
 			</Routes>
 			<Footer />

@@ -1,18 +1,20 @@
-import { Link, Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import menu from '../../assets/images/menu.svg';
-import { Menu, ModalMenu } from './index';
-import cart from '../../assets/images/cart.svg';
-import avatar from '../../assets/images/avatar.png';
-import ModalCart from '../Cart/ModalCart';
 import { useSelector } from 'react-redux';
+import { Link, Outlet } from 'react-router-dom';
+import { Menu, ModalMenu } from './index';
+import ModalCart from '../Cart/ModalCart';
 import ModalLogin from '../Login/ModalLogin';
+import menu from '../../assets/images/menu.svg';
+import avatar from '../../assets/images/avatar.png';
+import error from '../../assets/images/Error.png';
+import cart from '../../assets/images/cart.svg';
 
 const NavBar = () => {
 	const [modalMenu, setModalMenu] = useState(false);
 	const [modalCart, setModalCart] = useState(false);
 	const [modalLogin, setModalLogin] = useState(false);
 	const quantity = useSelector((state) => state.quantity);
+	const logged = useSelector((state) => state.logged);
 
 	const modalMenuOC = () => {
 		setModalMenu(!modalMenu);
@@ -59,17 +61,26 @@ const NavBar = () => {
 								onClick={modalCartOC}
 							/>
 						</div>
-						<img
-							src={avatar}
-							alt='avatar'
-							className='w-[30px] cursor-pointer lg:w-[48px]'
-							onClick={modalLoginOC}
-						/>
+						{logged ? (
+							<img
+								src={error}
+								alt='avatar'
+								className='w-[30px] cursor-pointer rounded-[32px] lg:w-[48px]'
+								onClick={modalLoginOC}
+							/>
+						) : (
+							<img
+								src={avatar}
+								alt='avatar'
+								className='w-[30px] cursor-pointer lg:w-[48px]'
+								onClick={modalLoginOC}
+							/>
+						)}
 					</div>
 				</header>
 				{modalMenu && <ModalMenu modalMenuOC={modalMenuOC} />}
-				{modalCart && <ModalCart />}
-				{modalLogin && <ModalLogin />}
+				{modalCart && <ModalCart modalLoginOC={modalLoginOC} />}
+				{modalLogin && <ModalLogin modalLoginOC={modalLoginOC} />}
 				<Outlet />
 			</div>
 		</>
