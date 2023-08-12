@@ -1,17 +1,23 @@
-import trash from '../../assets/images/delete.svg';
-import image from '../../assets/images/Error.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { modalCartInfo } from '../../redux/actions';
+import PropTypes from 'prop-types';
+import image from '../../assets/images/Error.png';
+import trash from '../../assets/images/delete.svg';
 
-const ModalCart = () => {
+const ModalCart = ({ modalLoginOC }) => {
 	const dispatch = useDispatch();
 	const name = useSelector((state) => state.name);
 	const size = useSelector((state) => state.size);
 	const quantity = useSelector((state) => state.quantity);
 	const price = useSelector((state) => state.price);
+	const logged = useSelector((state) => state.logged);
 
 	const handleDelete = () => {
 		dispatch(modalCartInfo('', '', 0, 0));
+	};
+
+	const handlePayment = () => {
+		logged === false && modalLoginOC();
 	};
 
 	return (
@@ -42,7 +48,10 @@ const ModalCart = () => {
 							className='cursor-pointer'
 						/>
 					</div>
-					<button className='text-bold flex h-[57px] w-full items-center justify-center gap-[16px] rounded-[8px] bg-azul text-[0.9em] text-blanco hover:opacity-[0.5]'>
+					<button
+						className='text-bold flex h-[57px] w-full items-center justify-center gap-[16px] rounded-[8px] bg-azul text-[0.9em] text-blanco hover:opacity-[0.5]'
+						onClick={handlePayment}
+					>
 						Pagar
 					</button>
 				</div>
@@ -53,6 +62,10 @@ const ModalCart = () => {
 			)}
 		</div>
 	);
+};
+
+ModalCart.propTypes = {
+	modalLoginOC: PropTypes.func.isRequired,
 };
 
 export default ModalCart;

@@ -1,4 +1,10 @@
-import { FILTER_DATA, MODAL_CART_INFO, SORT_GEN } from './actions_types';
+import {
+	FILTER_DATA,
+	MODAL_CART_INFO,
+	SORT_GEN,
+	SIGN_IN,
+	LOG_OUT,
+} from './actions_types';
 
 const data = [
 	{
@@ -884,6 +890,9 @@ const data = [
 const initialState = {
 	data: [...data],
 	filteredData: [...data],
+	fullname: '',
+	email: '',
+	logged: false,
 	name: '',
 	size: '',
 	quantity: 0,
@@ -921,6 +930,20 @@ const reducer = (state = initialState, { type, payload }) => {
 				filteredData: genderData,
 			};
 		}
+		case SIGN_IN:
+			return {
+				...state,
+				fullname: payload.user.user_metadata.fullName,
+				email: payload.user.email,
+				logged: payload.user.aud === 'authenticated',
+			};
+		case LOG_OUT:
+			return {
+				...state,
+				fullname: '',
+				email: '',
+				logged: false,
+			};
 		default:
 			return { ...state };
 	}
