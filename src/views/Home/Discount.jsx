@@ -6,7 +6,7 @@ const Discount = () => {
 			<img
 				src={MoloLogo}
 				alt='MoloLogo'
-				className='h-[325px] w-[325px] lg:h-[255px] lg:w-[255px]'
+				className='hidden h-[325px] w-[325px] lg:block lg:h-[255px] lg:w-[255px]'
 			/>
 			<div className='flex h-[325px] w-[325px] items-center justify-center bg-error-image lg:h-[255px] lg:w-[769px]'>
 				<div className='flex h-[325px] w-[325px] flex-col items-center justify-center bg-blanco bg-opacity-[80%] text-center lg:h-[255px] lg:w-[769px]'>
