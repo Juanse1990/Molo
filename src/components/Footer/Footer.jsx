@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { sortGen } from '../../redux/index';
 import WhatsAppLogo from '../../assets/images/WhatsAppLogo.svg';
 import IgLogo from '../../assets/images/IgLogo.svg';
+import GoogleMapsLogo from '../../assets/images/GoogleMapsLogo.svg';
 import GmailLogo from '../../assets/images/GmailLogo.svg';
 
 const Footer = () => {
@@ -61,9 +62,11 @@ const Footer = () => {
 					</li>
 				</ul>
 				<div className='items-centers flex flex-col text-center lg:w-[350px] lg:text-[20px]'>
-					<h2 className='mx-[5px] my-[10px] font-bold'>CONTACTO</h2>
-					<ul className='mx-[5px] my-[10px] flex w-[90px] items-center justify-around text-center lg:w-[350px]'>
-						<li>
+					<h2 className='mx-[5px] mt-[10px] font-bold lg:my-[10px]'>
+						CONTACTO
+					</h2>
+					<ul className='mx-[5px] my-[10px] flex w-[90px] flex-wrap items-center justify-around text-center lg:w-[350px]'>
+						<li className='mb-[5px] lg:mb-0'>
 							<a
 								href='https://www.instagram.com/moloindumentaria'
 								target='_blank'
@@ -72,11 +75,11 @@ const Footer = () => {
 								<img
 									src={IgLogo}
 									alt='Instagram'
-									className='h-[25px] w-[25px] lg:h-[50px] lg:w-[50px]'
+									className='h-[38px] w-[38px] lg:h-[50px] lg:w-[50px]'
 								/>
 							</a>
 						</li>
-						<li>
+						<li className='mb-[5px] lg:mb-0'>
 							<a
 								href='https://wa.me/543624723446?text=Hola%20quiero%20hacerte%20una%20consulta!'
 								target='_blank'
@@ -85,11 +88,24 @@ const Footer = () => {
 								<img
 									src={WhatsAppLogo}
 									alt='WhatsApp'
-									className='h-[25px] w-[25px] lg:h-[50px] lg:w-[50px]'
+									className='h-[38px] w-[38px] lg:h-[50px] lg:w-[50px]'
 								/>
 							</a>
 						</li>
-						<li>
+						<li className='mb-[5px] lg:mb-0'>
+							<a
+								href='https://www.google.com.ar/maps/place/Santiago+del+Estero+885,+H3500+Resistencia,+Chaco/@-27.4473352,-59.0004528,17z/data=!3m1!4b1!4m6!3m5!1s0x94450c6255ced9f9:0xb8337f75c6c79ecf!8m2!3d-27.44734!4d-58.9978779!16s%2Fg%2F11j8sg1pcy?entry=ttu'
+								target='_blank'
+								rel='noreferrer'
+							>
+								<img
+									src={GoogleMapsLogo}
+									alt='GoogleMaps'
+									className='h-[38px] w-[38px] lg:h-[50px] lg:w-[50px]'
+								/>
+							</a>
+						</li>
+						<li className='mb-[5px] lg:mb-0'>
 							<a
 								href='mailto:moloindumentaria@gmail.com'
 								target='_blank'
@@ -98,7 +114,7 @@ const Footer = () => {
 								<img
 									src={GmailLogo}
 									alt='Correo'
-									className='h-[25px] w-[25px] lg:h-[50px] lg:w-[50px]'
+									className='h-[38px] w-[38px] lg:h-[50px] lg:w-[50px]'
 								/>
 							</a>
 						</li>
