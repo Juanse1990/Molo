@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { supabase } from '../../utils/Supabase';
 import { signIn } from '../../redux/actions';
+import Swal from 'sweetalert2';
 import PropTypes from 'prop-types';
 import x from '../../assets/images/x-blue.svg';
 import { ValidateEmail, ValidatePassword, ValidateName } from './validate';
@@ -25,12 +26,25 @@ const Login = ({ modalLoginOC }) => {
 			});
 			if (error) {
 				console.error('Error Login:', error.message);
-				return;
+				return Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'Algo salio mal!',
+					color: '#000000',
+					confirmButtonColor: '#4E86C1',
+				});
 			}
 			console.log('Login successful:', data);
 			dispatch(signIn(data.user));
 			setForm({ name: '', email: '', password: '' });
 			modalLoginOC();
+			Swal.fire({
+				icon: 'success',
+				title: 'Buen Trabajo!',
+				text: `Te has logueado con éxito ${data.user.user_metadata.fullName}!`,
+				color: '#000000',
+				confirmButtonColor: '#4E86C1',
+			});
 		} catch (error) {
 			console.error('Unknown error:', error.message);
 		}
@@ -50,13 +64,32 @@ const Login = ({ modalLoginOC }) => {
 			});
 			if (error) {
 				console.error('Error registering:', error.message);
-				return;
+				return Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'Ocurrio un error al registrarte',
+					color: '#000000',
+					confirmButtonColor: '#4E86C1',
+				});
 			}
-			console.log('Registration successful:', data);
 			setForm({ name: '', email: '', password: '' });
 			modalLoginOC();
+			Swal.fire({
+				icon: 'success',
+				title: 'Buen Trabajo!',
+				text: `Te has registrado con éxito ${data.user.user_metadata.fullName}!
+					Por favor, revisa tu correo electrónico para activar tu cuenta.`,
+				color: '#000000',
+				confirmButtonColor: '#4E86C1',
+			});
 		} catch (error) {
-			console.error('Unknown error:', error.message);
+			return Swal.fire({
+				icon: 'error',
+				title: 'Oops...',
+				text: 'Ocurrio un error desconocido',
+				color: '#000000',
+				confirmButtonColor: '#4E86C1',
+			});
 		}
 	};
 
