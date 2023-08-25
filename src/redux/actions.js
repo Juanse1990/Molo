@@ -6,7 +6,7 @@ import {
 	LOG_OUT,
 } from './actions_types';
 
-export const modalCartInfo = (name, selectedSize, quantity, price) => {
+export const modalCartInfo = (name, selectedSize, quantity, price, image) => {
 	return {
 		type: MODAL_CART_INFO,
 		payload: {
@@ -14,6 +14,7 @@ export const modalCartInfo = (name, selectedSize, quantity, price) => {
 			selectedSize,
 			quantity,
 			price,
+			image,
 		},
 	};
 };

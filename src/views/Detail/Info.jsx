@@ -11,6 +11,16 @@ const Info = ({ cloth }) => {
 	const [selectedSize, setSelectedSize] = useState('');
 	const [quantity, setQuantity] = useState(1);
 
+	const sizeToIndex = {
+		XS: 0,
+		S: 1,
+		M: 2,
+		L: 3,
+		XL: 4,
+		XXL: 5,
+		Unico: 6,
+	};
+
 	const handleSizeClick = (size) => {
 		setSelectedSize(size);
 	};
@@ -18,7 +28,9 @@ const Info = ({ cloth }) => {
 		if (quantity > 1) setQuantity(quantity - 1);
 	};
 	const IQuantity = () => {
-		setQuantity(quantity + 1);
+		if (quantity < cloth().talles[sizeToIndex[selectedSize]]) {
+			setQuantity(quantity + 1);
+		}
 	};
 	const handleInputChange = (event) => {
 		setQuantity(event.target.value);
@@ -27,7 +39,13 @@ const Info = ({ cloth }) => {
 	const handleSubmit = () => {
 		if (selectedSize !== '') {
 			dispatch(
-				modalCartInfo(cloth().nombre, selectedSize, quantity, priceDiscount),
+				modalCartInfo(
+					cloth().nombre,
+					selectedSize,
+					quantity,
+					priceDiscount,
+					cloth().images[0],
+				),
 			);
 		}
 	};
@@ -72,68 +90,127 @@ const Info = ({ cloth }) => {
 				) : null}
 			</div>
 			<div className='flex justify-center'>
-				<ul className='mb-[24px] flex h-[40px] w-[250px] cursor-pointer items-center justify-between'>
-					{cloth().talles.includes('xs') ? (
+				{cloth().talles[6] ? (
+					<ul className='mb-[24px] flex h-[40px] w-[250px] items-center justify-around'>
 						<li
-							className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul focus:bg-azul ${
-								selectedSize === 'XS' ? 'bg-azul' : 'hover:bg-azul'
+							className={`flex h-[30px] w-[100px] cursor-pointer items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
+								selectedSize === 'Unico' ? 'bg-azul' : 'hover:bg-azul'
 							}`}
-							onClick={() => handleSizeClick('XS')}
+							onClick={() => handleSizeClick('Unico')}
 						>
-							XS
+							Talle Unico
 						</li>
-					) : null}
-					{cloth().talles.includes('s') ? (
-						<li
-							className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
-								selectedSize === 'S' ? 'bg-azul' : 'hover:bg-azul'
-							}`}
-							onClick={() => handleSizeClick('S')}
-						>
-							S
-						</li>
-					) : null}
-					{cloth().talles.includes('m') ? (
-						<li
-							className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
-								selectedSize === 'M' ? 'bg-azul' : 'hover:bg-azul'
-							}`}
-							onClick={() => handleSizeClick('M')}
-						>
-							M
-						</li>
-					) : null}
-					{cloth().talles.includes('l') ? (
-						<li
-							className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
-								selectedSize === 'L' ? 'bg-azul' : 'hover:bg-azul'
-							}`}
-							onClick={() => handleSizeClick('L')}
-						>
-							L
-						</li>
-					) : null}
-					{cloth().talles.includes('xl') ? (
-						<li
-							className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
-								selectedSize === 'XL' ? 'bg-azul' : 'hover:bg-azul'
-							}`}
-							onClick={() => handleSizeClick('XL')}
-						>
-							XL
-						</li>
-					) : null}
-					{cloth().talles.includes('xxl') ? (
-						<li
-							className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
-								selectedSize === 'XXL' ? 'bg-azul' : 'hover:bg-azul'
-							}`}
-							onClick={() => handleSizeClick('XXL')}
-						>
-							XXL
-						</li>
-					) : null}
-				</ul>
+					</ul>
+				) : (
+					<ul className='mb-[24px] flex h-[40px] w-[250px] items-center justify-around'>
+						{cloth().talles[0] ? (
+							<li
+								className={`flex h-[30px] w-[30px] cursor-pointer items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul focus:bg-azul ${
+									selectedSize === 'XS' ? 'bg-azul' : 'hover:bg-azul'
+								}`}
+								onClick={() => handleSizeClick('XS')}
+							>
+								XS
+							</li>
+						) : (
+							<li
+								className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] text-gray-300`}
+							>
+								XS
+							</li>
+						)}
+						{cloth().talles[1] ? (
+							<li
+								className={`flex h-[30px] w-[30px] cursor-pointer items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
+									selectedSize === 'S' ? 'bg-azul' : 'hover:bg-azul'
+								}`}
+								onClick={() => handleSizeClick('S')}
+							>
+								S
+							</li>
+						) : (
+							<li
+								className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] text-gray-300`}
+							>
+								S
+							</li>
+						)}
+						{cloth().talles[2] ? (
+							<li
+								className={`flex h-[30px] w-[30px] cursor-pointer items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
+									selectedSize === 'M' ? 'bg-azul' : 'hover:bg-azul'
+								}`}
+								onClick={() => handleSizeClick('M')}
+							>
+								M
+							</li>
+						) : (
+							<li
+								className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] text-gray-300`}
+							>
+								M
+							</li>
+						)}
+						{cloth().talles[3] ? (
+							<li
+								className={`flex h-[30px] w-[30px] cursor-pointer items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
+									selectedSize === 'L' ? 'bg-azul' : 'hover:bg-azul'
+								}`}
+								onClick={() => handleSizeClick('L')}
+							>
+								L
+							</li>
+						) : (
+							<li
+								className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] text-gray-300`}
+							>
+								L
+							</li>
+						)}
+						{cloth().talles[4] ? (
+							<li
+								className={`flex h-[30px] w-[30px] cursor-pointer items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
+									selectedSize === 'XL' ? 'bg-azul' : 'hover:bg-azul'
+								}`}
+								onClick={() => handleSizeClick('XL')}
+							>
+								XL
+							</li>
+						) : (
+							<li
+								className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] text-gray-300`}
+							>
+								XL
+							</li>
+						)}
+						{cloth().talles[5] ? (
+							<li
+								className={`flex h-[30px] w-[30px] cursor-pointer items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
+									selectedSize === 'XXL' ? 'bg-azul' : 'hover:bg-azul'
+								}`}
+								onClick={() => handleSizeClick('XXL')}
+							>
+								XXL
+							</li>
+						) : (
+							<li
+								className={`flex h-[30px] w-[30px] items-center justify-center rounded-[8px] border-[1px] text-gray-300`}
+							>
+								XXL
+							</li>
+						)}
+						{cloth().talles[6] ? (
+							<li
+								className={`flex h-[30px] w-[40px] cursor-pointer items-center justify-center rounded-[8px] border-[1px] border-azul hover:bg-azul ${
+									selectedSize === 'Unico' ? 'bg-azul' : 'hover:bg-azul'
+								}`}
+								onClick={() => handleSizeClick('Unico')}
+							>
+								Unico
+							</li>
+						) : null}
+					</ul>
+				)}
 			</div>
 			<div className='lg:flex lg:h-[47px] lg:items-center lg:gap-[32px]'>
 				<div className='mb-[24px] flex h-[40px] items-center text-center lg:mb-[0]'>
