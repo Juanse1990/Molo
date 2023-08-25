@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { modalCartInfo } from '../../redux/actions';
 import PropTypes from 'prop-types';
-import image from '../../assets/images/Error.png';
 import trash from '../../assets/images/delete.svg';
 
 const ModalCart = ({ modalLoginOC }) => {
@@ -10,10 +9,11 @@ const ModalCart = ({ modalLoginOC }) => {
 	const size = useSelector((state) => state.size);
 	const quantity = useSelector((state) => state.quantity);
 	const price = useSelector((state) => state.price);
+	const image = useSelector((state) => state.image);
 	const logged = useSelector((state) => state.logged);
 
 	const handleDelete = () => {
-		dispatch(modalCartInfo('', '', 0, 0));
+		dispatch(modalCartInfo('', '', 0, 0, ''));
 	};
 
 	const handlePayment = () => {
