@@ -8,10 +8,16 @@ mercadopago.configure({
   access_token: process.env.ACCESS_TOKEN,
 });
 
+const corsOptions = {
+  origin: ["http://localhost:5173", "https://molo-steel.vercel.app"],
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("../../client/html-js"));
-app.use(cors());
+app.use(cors(corsOptions));
 app.get("/", function (req, res) {
   res.status(200).send("Molo");
 });
