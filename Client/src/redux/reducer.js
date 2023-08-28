@@ -170,6 +170,7 @@ const data = [
 		images: [
 			'https://mayoristas.aguafitness.com/wp-content/uploads/1789-ropa_deportiva_por_mayor_Short_race_amarillo-300x450.jpg',
 			'https://mayoristas.aguafitness.com/wp-content/uploads/1790-ropa_deportiva_por_mayor_Short_race_amarillo_2-300x450.jpg',
+			0,
 		],
 	},
 	{

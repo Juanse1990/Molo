@@ -1,5 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { modalCartInfo } from '../../redux/actions';
+import { useState } from 'react';
+import { initMercadoPago, Wallet } from '@mercadopago/sdk-react';
+import axios from 'axios';
 import PropTypes from 'prop-types';
 import trash from '../../assets/images/delete.svg';
 
@@ -11,17 +14,43 @@ const ModalCart = ({ modalLoginOC }) => {
 	const price = useSelector((state) => state.price);
 	const image = useSelector((state) => state.image);
 	const logged = useSelector((state) => state.logged);
+	const [preferenceId, setPreferenceId] = useState(null);
+
+	initMercadoPago(import.meta.env.VITE_PUBLIC_KEY, { locale: 'es-AR' });
+
+	const createPreference = async () => {
+		try {
+			const response = await axios.post(
+				'http://localhost:8080/create_preference',
+				{
+					description: name,
+					currency_id: 'ARS',
+					image,
+					quantity,
+					price,
+				},
+			);
+			const { id } = response.data;
+			return id;
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
 	const handleDelete = () => {
 		dispatch(modalCartInfo('', '', 0, 0, ''));
 	};
 
-	const handlePayment = () => {
+	const handlePayment = async () => {
 		logged === false && modalLoginOC();
+		const id = await createPreference();
+		if (id) {
+			setPreferenceId(id);
+		}
 	};
 
 	return (
-		<div className='absolute right-[6px] top-[75px] z-40 h-[260px] w-[360px] rounded-[8px] bg-blanco shadow-lg'>
+		<div className='absolute right-[6px] top-[75px] z-40 h-[335px] w-[360px] rounded-[8px] bg-blanco shadow-lg lg:h-[335px] lg:w-[380px]'>
 			<p className='border-b-[1px]  border-azul p-[24px] font-bold'>Cart</p>
 			{price ? (
 				<div className='p-[24px]'>
@@ -54,6 +83,14 @@ const ModalCart = ({ modalLoginOC }) => {
 					>
 						Pagar
 					</button>
+					{logged && preferenceId && (
+						<Wallet
+							initialization={{
+								preferenceId,
+								redirectMode: 'modal',
+							}}
+						/>
+					)}
 				</div>
 			) : (
 				<div className='mt-[40px] flex items-center justify-center p-[24px]'>

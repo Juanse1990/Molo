@@ -6,10 +6,10 @@ export function ValidateEmail(email) {
 }
 
 export function ValidatePassword(password) {
-	if (password.length > 8) {
+	if (password.length > 4) {
 		return true;
 	}
-	throw new Error('La contraseña debe tener al menos 8 caracteres!');
+	throw new Error('La contraseña debe tener al menos 6 caracteres!');
 }
 
 export function ValidateName(name) {
