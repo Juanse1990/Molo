@@ -34,13 +34,20 @@ app.post("/create_preference", (req, res) => {
         unit_price: Number(req.body.price),
       },
     ],
+    payer: {
+      name: req.body.name,
+      email: req.body.email,
+      address: {
+        street_name: req.body.address,
+      },
+    },
     back_urls: {
       success: "https://molo-steel.vercel.app",
       failure: "https://molo-steel.vercel.app",
       pending: "https://molo-steel.vercel.app",
     },
     shipments: {
-      cost: 5000,
+      cost: 1000,
       mode: "not_specified",
     },
     // auto_return: "approved",

@@ -5,13 +5,24 @@ import { signIn } from '../../redux/actions';
 import Swal from 'sweetalert2';
 import PropTypes from 'prop-types';
 import x from '../../assets/images/x-blue.svg';
-import { ValidateEmail, ValidatePassword, ValidateName } from './validate';
+import {
+	ValidateEmail,
+	ValidatePassword,
+	ValidateName,
+	ValidateAddress,
+} from './validate';
 
 const Login = ({ modalLoginOC }) => {
 	const [login, setLogin] = useState(true);
-	const [form, setForm] = useState({ name: '', email: '', password: '' });
+	const [form, setForm] = useState({
+		name: '',
+		address: '',
+		email: '',
+		password: '',
+	});
 	const [error, setError] = useState({
 		errorName: '',
+		errorAddress: '',
 		errorEmail: '',
 		errorPassword: '',
 	});
@@ -52,35 +63,47 @@ const Login = ({ modalLoginOC }) => {
 	const handleRegister = async (e) => {
 		e.preventDefault();
 		try {
-			const { data, error } = await supabase.auth.signUp({
-				email: form.email,
-				password: form.password,
-				options: {
-					data: {
-						fullName: form.name,
+			if (
+				form.name &&
+				!error.errorName &&
+				form.address &&
+				!error.errorAddress &&
+				form.email &&
+				!error.errorEmail &&
+				form.password &&
+				!error.errorPassword
+			) {
+				const { data, error } = await supabase.auth.signUp({
+					email: form.email,
+					password: form.password,
+					options: {
+						data: {
+							fullName: form.name,
+							address: form.address,
+						},
 					},
-				},
-			});
-			if (error) {
-				console.error('Error registering:', error.message);
-				return Swal.fire({
-					icon: 'error',
-					title: 'Oops...',
-					text: 'Ocurrio un error al registrarte',
+				});
+				if (error) {
+					console.error('Error registering:', error.message);
+					return Swal.fire({
+						icon: 'error',
+						title: 'Oops...',
+						text: 'Ocurrio un error al registrarte',
+						color: '#000000',
+						confirmButtonColor: '#4E86C1',
+					});
+				}
+				setForm({ name: '', address: '', email: '', password: '' });
+				modalLoginOC();
+				Swal.fire({
+					icon: 'success',
+					title: 'Buen Trabajo!',
+					text: `Te has registrado con éxito ${data.user.user_metadata.fullName}!
+					Por favor, revisa tu correo electrónico para activar tu cuenta.`,
 					color: '#000000',
 					confirmButtonColor: '#4E86C1',
 				});
 			}
-			setForm({ name: '', email: '', password: '' });
-			modalLoginOC();
-			Swal.fire({
-				icon: 'success',
-				title: 'Buen Trabajo!',
-				text: `Te has registrado con éxito ${data.user.user_metadata.fullName}!
-					Por favor, revisa tu correo electrónico para activar tu cuenta.`,
-				color: '#000000',
-				confirmButtonColor: '#4E86C1',
-			});
 		} catch (error) {
 			return Swal.fire({
 				icon: 'error',
@@ -136,6 +159,22 @@ const Login = ({ modalLoginOC }) => {
 			setError((prevForm) => ({
 				...prevForm,
 				errorName: error,
+			}));
+		}
+	};
+
+	const handleChangeAddress = (e) => {
+		try {
+			setForm((prevForm) => ({
+				...prevForm,
+				address: e.target.value,
+			}));
+			ValidateAddress(form.address) &&
+				setError((prevForm) => ({ ...prevForm, errorAddress: '' }));
+		} catch (error) {
+			setError((prevForm) => ({
+				...prevForm,
+				errorAddress: error,
 			}));
 		}
 	};
@@ -215,7 +254,7 @@ const Login = ({ modalLoginOC }) => {
 					</p>
 				</div>
 			) : (
-				<div className='flex h-[470px] w-[350px] flex-col items-center rounded-[16px] bg-blanco'>
+				<div className='flex h-[550px] w-[350px] flex-col items-center rounded-[16px] bg-blanco'>
 					<div className='ml-auto p-3'>
 						<img
 							src={x}
@@ -245,6 +284,27 @@ const Login = ({ modalLoginOC }) => {
 							{error.errorName && (
 								<p className='mb-1 ml-1 text-sm font-semibold text-red-600'>
 									{error.errorName.message}
+								</p>
+							)}
+						</div>
+						<div className='mb-1 h-[80px]'>
+							<label
+								htmlFor='address'
+								className='block pl-1 text-sm font-semibold text-azul'
+							>
+								Dirección
+							</label>
+							<input
+								type='text'
+								placeholder='Dirección'
+								className='h-10 w-full rounded-md border-2 pl-3 text-sm outline-none focus:border-azul'
+								value={form.address}
+								id='address'
+								onChange={handleChangeAddress}
+							/>
+							{error.errorAddress && (
+								<p className='mb-1 ml-1 text-sm font-semibold text-red-600'>
+									{error.errorAddress.message}
 								</p>
 							)}
 						</div>

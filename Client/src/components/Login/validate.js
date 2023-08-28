@@ -18,3 +18,10 @@ export function ValidateName(name) {
 	}
 	throw new Error('El nombre debe tener entre 3 y 20 caracteres!');
 }
+
+export function ValidateAddress(address) {
+	if (address.length > 3 && address.length < 50) {
+		return true;
+	}
+	throw new Error('La dirección debe tener entre 3 y 50 caracteres!');
+}

@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { modalCartInfo } from '../../redux/actions';
 import { useState } from 'react';
 import { initMercadoPago, Wallet } from '@mercadopago/sdk-react';
+import { supabase } from '../../utils/Supabase';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import trash from '../../assets/images/delete.svg';
@@ -20,6 +21,11 @@ const ModalCart = ({ modalLoginOC }) => {
 
 	const createPreference = async () => {
 		try {
+			const {
+				data: { user },
+			} = await supabase.auth.getUser();
+			const metadata = user.user_metadata;
+
 			const response = await axios.post(
 				`${import.meta.env.VITE_SERVER}/create_preference`,
 				{
@@ -28,6 +34,9 @@ const ModalCart = ({ modalLoginOC }) => {
 					image,
 					quantity,
 					price,
+					name: metadata.fullName,
+					email: user.email,
+					address: metadata.address,
 				},
 			);
 			const { id } = response.data;
@@ -43,9 +52,11 @@ const ModalCart = ({ modalLoginOC }) => {
 
 	const handlePayment = async () => {
 		logged === false && modalLoginOC();
-		const id = await createPreference();
-		if (id) {
-			setPreferenceId(id);
+		if (logged) {
+			const id = await createPreference();
+			if (id) {
+				setPreferenceId(id);
+			}
 		}
 	};
 
