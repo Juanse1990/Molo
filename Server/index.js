@@ -46,10 +46,10 @@ app.post("/create_preference", (req, res) => {
       failure: "https://molo-steel.vercel.app",
       pending: "https://molo-steel.vercel.app",
     },
-    shipments: {
-      cost: 1000,
-      mode: "not_specified",
-    },
+    // shipments: {
+    //   cost: 1000,
+    //   mode: "not_specified",
+    // },
     // auto_return: "approved",
     statement_descriptor: "MOLO INDUMENTARIA",
   };
