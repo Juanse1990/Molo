@@ -34,7 +34,6 @@ const Login = ({ modalLoginOC }) => {
 					confirmButtonColor: '#4E86C1',
 				});
 			}
-			console.log('Login successful:', data);
 			dispatch(signIn(data.user));
 			setForm({ name: '', email: '', password: '' });
 			modalLoginOC();
