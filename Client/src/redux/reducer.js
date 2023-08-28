@@ -869,6 +869,22 @@ const data = [
 			'https://d3ugyf2ht6aenh.cloudfront.net/stores/002/023/047/products/e4d14b83-d08a-4dfe-b219-b0756aeed8eb-260a8fb4a6f2f8177c16494409751243-480-0.webp',
 		],
 	},
+	{
+		marca: 'Prueba',
+		prenda: 'prueba',
+		id: '999',
+		nombre: 'Prueba mercado pago',
+		precio: 100.0,
+		descuento: 0,
+		talles: [0, 1, 1, 1, 1, 1, 0],
+		genero: 'hombre',
+		images: [
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/002/023/047/products/91d06510-8470-4bf4-9668-4e3887c3c785-0baa1e9df88d5b1aa616494409750988-480-0.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/002/023/047/products/20598981-7a6f-4f09-9c0c-3290b2c60417-180bbab68162b78d7416494409751199-480-0.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/002/023/047/products/ca225f10-3240-4b2a-8ec3-f2b3219d62c3-9459319bcdb509cfc616494409751064-480-0.webp',
+			'https://d3ugyf2ht6aenh.cloudfront.net/stores/002/023/047/products/e4d14b83-d08a-4dfe-b219-b0756aeed8eb-260a8fb4a6f2f8177c16494409751243-480-0.webp',
+		],
+	},
 ];
 
 const initialState = {
