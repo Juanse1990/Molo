@@ -21,7 +21,7 @@ const ModalCart = ({ modalLoginOC }) => {
 	const createPreference = async () => {
 		try {
 			const response = await axios.post(
-				'http://localhost:8080/create_preference',
+				'https://servermolo.vercel.app//create_preference',
 				{
 					description: name,
 					currency_id: 'ARS',
