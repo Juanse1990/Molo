@@ -39,6 +39,7 @@ app.post("/create_preference", (req, res) => {
       email: req.body.email,
       address: {
         street_name: req.body.address,
+        street_number: req.body.number,
       },
     },
     back_urls: {
@@ -50,7 +51,6 @@ app.post("/create_preference", (req, res) => {
     //   cost: 1000,
     //   mode: "not_specified",
     // },
-    // auto_return: "approved",
     statement_descriptor: "MOLO INDUMENTARIA",
   };
 

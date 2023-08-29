@@ -37,6 +37,7 @@ const ModalCart = ({ modalLoginOC }) => {
 					name: metadata.fullName,
 					email: user.email,
 					address: metadata.address,
+					number: metadata.number,
 				},
 			);
 			const { id } = response.data;
@@ -105,7 +106,7 @@ const ModalCart = ({ modalLoginOC }) => {
 				</div>
 			) : (
 				<div className='mt-[40px] flex items-center justify-center p-[24px]'>
-					<p className=''>No hay articulos aun</p>
+					<p>No hay articulos aun</p>
 				</div>
 			)}
 		</div>
