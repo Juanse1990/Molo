@@ -39,7 +39,7 @@ app.post("/create_preference", (req, res) => {
       email: req.body.email,
       address: {
         street_name: req.body.address,
-        street_number: req.body.number,
+        street_number: Number(req.body.number),
       },
     },
     back_urls: {
