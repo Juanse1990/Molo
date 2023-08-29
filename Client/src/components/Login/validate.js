@@ -2,7 +2,7 @@ export function ValidateEmail(email) {
 	if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
 		return true;
 	}
-	throw new Error('Email inválido!');
+	throw new Error('El email es inválido!');
 }
 
 export function ValidatePassword(password) {
@@ -23,5 +23,12 @@ export function ValidateAddress(address) {
 	if (address.length > 3 && address.length < 50) {
 		return true;
 	}
-	throw new Error('La dirección debe tener entre 3 y 50 caracteres!');
+	throw new Error('La dirección es inválida!');
+}
+
+export function ValidateNumber(number) {
+	if (number > 0 && number < 999) {
+		return true;
+	}
+	throw new Error('Número invalido!');
 }

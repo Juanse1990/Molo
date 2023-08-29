@@ -10,6 +10,7 @@ import {
 	ValidatePassword,
 	ValidateName,
 	ValidateAddress,
+	ValidateNumber,
 } from './validate';
 
 const Login = ({ modalLoginOC }) => {
@@ -17,12 +18,14 @@ const Login = ({ modalLoginOC }) => {
 	const [form, setForm] = useState({
 		name: '',
 		address: '',
+		number: 0,
 		email: '',
 		password: '',
 	});
 	const [error, setError] = useState({
 		errorName: '',
 		errorAddress: '',
+		errorNumber: '',
 		errorEmail: '',
 		errorPassword: '',
 	});
@@ -46,7 +49,7 @@ const Login = ({ modalLoginOC }) => {
 				});
 			}
 			dispatch(signIn(data.user));
-			setForm({ name: '', email: '', password: '' });
+			setForm({ name: '', address: '', number: '', email: '', password: '' });
 			modalLoginOC();
 			Swal.fire({
 				icon: 'success',
@@ -68,6 +71,8 @@ const Login = ({ modalLoginOC }) => {
 				!error.errorName &&
 				form.address &&
 				!error.errorAddress &&
+				form.number &&
+				!error.errorNumber &&
 				form.email &&
 				!error.errorEmail &&
 				form.password &&
@@ -80,6 +85,7 @@ const Login = ({ modalLoginOC }) => {
 						data: {
 							fullName: form.name,
 							address: form.address,
+							number: form.number,
 						},
 					},
 				});
@@ -93,7 +99,7 @@ const Login = ({ modalLoginOC }) => {
 						confirmButtonColor: '#4E86C1',
 					});
 				}
-				setForm({ name: '', address: '', email: '', password: '' });
+				setForm({ name: '', address: '', number: '', email: '', password: '' });
 				modalLoginOC();
 				Swal.fire({
 					icon: 'success',
@@ -175,6 +181,22 @@ const Login = ({ modalLoginOC }) => {
 			setError((prevForm) => ({
 				...prevForm,
 				errorAddress: error,
+			}));
+		}
+	};
+
+	const handleChangeNumber = (e) => {
+		try {
+			setForm((prevForm) => ({
+				...prevForm,
+				number: e.target.value,
+			}));
+			ValidateNumber(form.number) &&
+				setError((prevForm) => ({ ...prevForm, errorNumber: '' }));
+		} catch (error) {
+			setError((prevForm) => ({
+				...prevForm,
+				errorNumber: error,
 			}));
 		}
 	};
@@ -275,7 +297,7 @@ const Login = ({ modalLoginOC }) => {
 							</label>
 							<input
 								type='text'
-								placeholder='Nombre'
+								placeholder='Ingresa tu nombre completo'
 								className='h-10 w-full rounded-md border-2 pl-3 text-sm outline-none focus:border-azul'
 								value={form.name}
 								id='name'
@@ -287,26 +309,49 @@ const Login = ({ modalLoginOC }) => {
 								</p>
 							)}
 						</div>
-						<div className='mb-1 h-[80px]'>
-							<label
-								htmlFor='address'
-								className='block pl-1 text-sm font-semibold text-azul'
-							>
-								Dirección
-							</label>
-							<input
-								type='text'
-								placeholder='Dirección'
-								className='h-10 w-full rounded-md border-2 pl-3 text-sm outline-none focus:border-azul'
-								value={form.address}
-								id='address'
-								onChange={handleChangeAddress}
-							/>
-							{error.errorAddress && (
-								<p className='mb-1 ml-1 text-sm font-semibold text-red-600'>
-									{error.errorAddress.message}
-								</p>
-							)}
+						<div className='mb-1 flex h-[80px]'>
+							<div className='w-[90%]'>
+								<label
+									htmlFor='address'
+									className='block pl-1 text-sm font-semibold text-azul'
+								>
+									Dirección
+								</label>
+								<input
+									type='text'
+									placeholder='Ingresa tu dirección'
+									className='h-10 w-full rounded-md border-2 pl-3 text-sm outline-none focus:border-azul'
+									value={form.address}
+									id='address'
+									onChange={handleChangeAddress}
+								/>
+								{error.errorAddress && (
+									<p className='mb-1 ml-1 text-sm font-semibold text-red-600'>
+										{error.errorAddress.message}
+									</p>
+								)}
+							</div>
+							<div className='w-[23%]'>
+								<label
+									htmlFor='number'
+									className='block pl-1 text-sm font-semibold text-azul'
+								>
+									Número
+								</label>
+								<input
+									type='number'
+									placeholder='Número'
+									className='h-10 w-full rounded-md border-2 pl-1 text-sm outline-none focus:border-azul'
+									value={form.number}
+									id='number'
+									onChange={handleChangeNumber}
+								/>
+								{error.errorNumber && (
+									<p className='mb-1 ml-1 text-sm font-semibold text-red-600'>
+										{error.errorNumber.message}
+									</p>
+								)}
+							</div>
 						</div>
 						<div className='mb-1 h-[80px]'>
 							<label
@@ -317,7 +362,7 @@ const Login = ({ modalLoginOC }) => {
 							</label>
 							<input
 								type='email'
-								placeholder='Tu Email'
+								placeholder='Ingresa tu email'
 								className='h-10 w-full rounded-md border-2 pl-3 text-sm outline-none focus:border-azul'
 								value={form.email}
 								id='email'
@@ -338,7 +383,7 @@ const Login = ({ modalLoginOC }) => {
 							</label>
 							<input
 								type='password'
-								placeholder='Tu Contraseña'
+								placeholder='Ingresa tu contraseña'
 								className='h-10 w-full rounded-md border-2 pl-3 text-sm outline-none focus:border-azul'
 								value={form.password}
 								id='password'
