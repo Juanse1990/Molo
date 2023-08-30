@@ -32,6 +32,34 @@ app.post("/create_preference", (req, res) => {
     },
   });
 
+  const mailOptions = {
+    from: `${process.env.USER_EMAIL}`,
+    to: "moloindumentaria@gmail.com",
+    subject: "Detalles de la compra",
+    text: `¡Hola!
+  
+    Tienes un nuevo pedido de un cliente. Aquí están los detalles:
+    
+    Nombre del comprador: ${req.body.name}
+    Correo del comprador: ${req.body.email}
+    Producto: ${req.body.description}
+    Talle: ${req.body.size}
+    Cantidad: ${req.body.quantity}
+    Total: ${req.body.price * req.body.quantity} ${req.body.currency_id}
+    Envío: 1000 ARS
+    Dirección de envío: ${req.body.address}, ${req.body.number}
+    
+    ¡Gracias por tu atención!`,
+  };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error(error);
+    } else {
+      console.log("Correo enviado:", info.response);
+    }
+  });
+
   let preference = {
     items: [
       {
@@ -66,33 +94,6 @@ app.post("/create_preference", (req, res) => {
   mercadopago.preferences
     .create(preference)
     .then(function (response) {
-      const mailOptions = {
-        from: `${process.env.USER_EMAIL}`,
-        to: "moloindumentaria@gmail.com",
-        subject: "Detalles de la compra",
-        text: `¡Hola!
-      
-        Tienes un nuevo pedido de un cliente. Aquí están los detalles:
-        
-        Nombre del comprador: ${req.body.name}
-        Correo del comprador: ${req.body.email}
-        Producto: ${req.body.description}
-        Talle: ${req.body.size}
-        Cantidad: ${req.body.quantity}
-        Total: ${req.body.price * req.body.quantity} ${req.body.currency_id}
-        Envío: 1000 ARS
-        Dirección de envío: ${req.body.address}, ${req.body.number}
-        
-        ¡Gracias por tu atención!`,
-      };
-
-      transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-          console.error(error);
-        } else {
-          console.log("Correo enviado:", info.response);
-        }
-      });
       res.json({
         id: response.body.id,
       });
