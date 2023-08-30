@@ -38,6 +38,7 @@ const ModalCart = ({ modalLoginOC }) => {
 					email: user.email,
 					address: metadata.address,
 					number: metadata.number,
+					size,
 				},
 			);
 			const { id } = response.data;
