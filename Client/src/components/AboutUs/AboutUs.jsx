@@ -18,7 +18,7 @@ const AboutUs = () => {
 							¡Bienvenidos a la COMUNIDAD MOLO!
 						</p>
 						<p className='w-[300px] text-[12px] font-bold lg:w-[498px] lg:text-[17px]'>
-							Somos dos amigos emprendedores comprometidos en inspirarte y
+							Somos dos amigos emprendedores comprometidos a inspirarte y
 							motivarte a través de la venta de indumentaria deportiva de alta
 							calidad y estilo.
 						</p>

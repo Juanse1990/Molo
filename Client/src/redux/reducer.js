@@ -63,7 +63,7 @@ const data = [
 		precio: 11000.0,
 		descuento: 0,
 		talles: [0, 0, 0, 1, 0, 0, 0],
-		genero: 'hombre',
+		genero: 'unisex',
 		images: [
 			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/seg-basset-2-de-marzo229241-c6af5636c2db3dc8d716523654496651-480-0.webp',
 		],
@@ -76,7 +76,7 @@ const data = [
 		precio: 10000.0,
 		descuento: 0,
 		talles: [0, 1, 1, 1, 0, 0, 0],
-		genero: 'hombre',
+		genero: 'mujer',
 		images: [
 			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/seg-basset-31-de-enero83891-a3e3f6c4b76e28b5c116443354809115-640-0.webp',
 			'https://d3ugyf2ht6aenh.cloudfront.net/stores/920/457/products/seg-basset-31-de-enero83921-65f2d5acc54c0ae2f116443354810679-640-0.webp',
@@ -722,7 +722,7 @@ const data = [
 		precio: 15000.0,
 		descuento: 0,
 		talles: [0, 1, 0, 0, 0, 0, 0],
-		genero: 'unisex',
+		genero: 'mujer',
 		images: [
 			'https://d3ugyf2ht6aenh.cloudfront.net/stores/956/789/products/de6559ce-94e1-43ce-b7ad-24388b01ace91-a708ba2de0743c00ba16456194930640-480-0.webp',
 			'https://d3ugyf2ht6aenh.cloudfront.net/stores/956/789/products/3145a6a2-1533-497a-8a28-58b080e901ed1-e78eb3a0bb36faee2316412322975021-480-0.webp',
@@ -817,7 +817,7 @@ const data = [
 		precio: 6000.0,
 		descuento: 0,
 		talles: [0, 1, 1, 1, 0, 0, 0],
-		genero: 'unisex',
+		genero: 'hombre',
 		images: [
 			'https://d3ugyf2ht6aenh.cloudfront.net/stores/002/023/047/products/_dsc37311-c5472939ada1fe2c9116838973473091-640-0.webp',
 			'https://d3ugyf2ht6aenh.cloudfront.net/stores/002/023/047/products/_dsc37301-54b95ba0f3e16d5af716838973474610-640-0.webp',
@@ -859,22 +859,6 @@ const data = [
 		id: '310',
 		nombre: 'Calza Deportiva Hombre',
 		precio: 7500.0,
-		descuento: 0,
-		talles: [0, 1, 1, 1, 1, 1, 0],
-		genero: 'hombre',
-		images: [
-			'https://d3ugyf2ht6aenh.cloudfront.net/stores/002/023/047/products/91d06510-8470-4bf4-9668-4e3887c3c785-0baa1e9df88d5b1aa616494409750988-480-0.webp',
-			'https://d3ugyf2ht6aenh.cloudfront.net/stores/002/023/047/products/20598981-7a6f-4f09-9c0c-3290b2c60417-180bbab68162b78d7416494409751199-480-0.webp',
-			'https://d3ugyf2ht6aenh.cloudfront.net/stores/002/023/047/products/ca225f10-3240-4b2a-8ec3-f2b3219d62c3-9459319bcdb509cfc616494409751064-480-0.webp',
-			'https://d3ugyf2ht6aenh.cloudfront.net/stores/002/023/047/products/e4d14b83-d08a-4dfe-b219-b0756aeed8eb-260a8fb4a6f2f8177c16494409751243-480-0.webp',
-		],
-	},
-	{
-		marca: 'Prueba',
-		prenda: 'prueba',
-		id: '999',
-		nombre: 'Prueba mercado pago',
-		precio: 100.0,
 		descuento: 0,
 		talles: [0, 1, 1, 1, 1, 1, 0],
 		genero: 'hombre',
