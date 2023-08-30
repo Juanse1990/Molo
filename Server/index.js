@@ -77,6 +77,7 @@ app.post("/create_preference", (req, res) => {
         Nombre del comprador: ${req.body.name}
         Correo del comprador: ${req.body.email}
         Producto: ${req.body.description}
+        Talle: ${req.body.size}
         Cantidad: ${req.body.quantity}
         Total: ${req.body.price * req.body.quantity} ${req.body.currency_id}
         Envío: 1000 ARS
